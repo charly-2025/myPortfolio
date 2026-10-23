@@ -877,6 +877,21 @@ h3 {
 
 .h-viewport {
     width: 100%;
+    perspective: 1100px;
+    perspective-origin: 50% 50%;
+    padding: 30px 0;
+}
+
+.h-track {
+    transform-style: preserve-3d;
+}
+
+@media (min-width: 960px) and (min-height: 640px) {
+    /* Bords de l'écran incurvé qui s'estompent */
+    .h-viewport {
+        -webkit-mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
+        mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
+    }
 }
 
 .h-track {
@@ -890,7 +905,8 @@ h3 {
     width: min(420px, 82vw);
     flex: none;
     padding: 26px 28px;
-    transition: border-color 0.3s ease, transform 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    backface-visibility: hidden;
 }
 
 .xp-card:hover {

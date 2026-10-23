@@ -347,9 +347,26 @@ document.addEventListener('DOMContentLoaded', () => {
         // Projets d'études : défilement horizontal
         const track = document.querySelector('.h-track');
         const distance = () => Math.max(0, track.scrollWidth - window.innerWidth);
+        // Effet écran incurvé : chaque carte pivote vers le centre selon sa position
+        const xpCards = gsap.utils.toArray('.xp-card');
+        const curve = () => {
+            const mid = window.innerWidth / 2;
+            xpCards.forEach(card => {
+                const r = card.getBoundingClientRect();
+                const d = gsap.utils.clamp(-1.6, 1.6, (r.left + r.width / 2 - mid) / mid);
+                gsap.set(card, {
+                    rotationY: -d * 24,
+                    z: -Math.abs(d) * 70,
+                    scale: 1 - Math.abs(d) * 0.04,
+                    opacity: 1 - Math.abs(d) * 0.28,
+                    transformOrigin: '50% 50%',
+                });
+            });
+        };
         gsap.to(track, {
             x: () => -distance(),
             ease: 'none',
+            onUpdate: curve,
             scrollTrigger: {
                 trigger: '#projects',
                 start: 'top top',
@@ -363,6 +380,8 @@ document.addEventListener('DOMContentLoaded', () => {
             y: 40, opacity: 0, stagger: 0.1, duration: 0.8,
             scrollTrigger: { trigger: '#projects', start: 'top 70%' },
         });
+        curve();
+        ScrollTrigger.addEventListener('refresh', curve);
 
         pinScene('homelab', 1.4, scenes.homelab());
         const panel = document.querySelector('.skills-panel');
@@ -404,7 +423,10 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         skillsSec.addEventListener('mousemove', onMove);
         attachLoops();
-        return () => skillsSec.removeEventListener('mousemove', onMove);
+        return () => {
+            skillsSec.removeEventListener('mousemove', onMove);
+            ScrollTrigger.removeEventListener('refresh', curve);
+        };
     });
 
     mm.add('(max-width: 959px), (max-height: 639px)', () => {
