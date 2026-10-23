@@ -265,11 +265,42 @@ document.addEventListener('DOMContentLoaded', () => {
             const tl = gsap.timeline({ paused: true });
             // Le vaisseau traverse l'écran en boucle
             tl.add(gsap.timeline({ repeat: -1, repeatDelay: 0.6 })
-                .fromTo('#ship', { x: -260, y: 530, rotation: 0 }, { x: 1460, y: 390, duration: 6.5, ease: 'none' })
+                .fromTo('#ship', { x: -260, y: 330, scale: 0.5, rotation: 0 }, { x: 1460, y: 250, scale: 0.5, duration: 7, ease: 'none' })
                 .to('#ship', { rotation: -4, duration: 1.5, ease: 'sine.inOut', yoyo: true, repeat: 3 }, 0), 0);
             tl.add(gsap.timeline({ repeat: -1, repeatDelay: 2.5, delay: 1.5 })
                 .fromTo('#shooting-star', { x: 200, y: 40, opacity: 0 }, { x: 700, y: 210, opacity: 1, duration: 0.35, ease: 'power1.in' })
                 .to('#shooting-star', { x: 900, y: 277, opacity: 0, duration: 0.35 }), 0);
+            // Minecraft : la pioche frappe le minerai jusqu'à ce qu'il casse, puis il réapparaît
+            gsap.set('#mc-bits', { opacity: 0 });
+            const hit = () => gsap.timeline()
+                .to('#mc-pick', { rotation: -28, svgOrigin: '405 523', duration: 0.18, ease: 'power2.in' })
+                .to('#mc-ore', { x: 1.5, duration: 0.05, yoyo: true, repeat: 1 })
+                .to('#mc-pick', { rotation: 0, svgOrigin: '405 523', duration: 0.25, ease: 'power1.out' });
+            tl.add(gsap.timeline({ repeat: -1, repeatDelay: 0.4 })
+                .add(hit()).add(hit()).add(hit())
+                .to('#mc-ore', { scale: 0, transformOrigin: '50% 60%', duration: 0.2, ease: 'back.in(2)' })
+                .fromTo('#mc-bits', { opacity: 1, y: 0 }, { opacity: 0, y: 26, duration: 0.6, ease: 'power1.in' }, '<')
+                .to({}, { duration: 0.6 })
+                .to('#mc-ore', { scale: 1, duration: 0.35, ease: 'back.out(2)' }), 0);
+            tl.add(gsap.to('#mc-island', { y: -8, duration: 2.2, ease: 'sine.inOut', yoyo: true, repeat: -1 }), 0);
+
+            // Rocket League : la voiture boost, saute, frappe le ballon et marque
+            tl.add(gsap.timeline({ repeat: -1, repeatDelay: 0.6 })
+                .set('#rl-car', { x: 0, y: 0, rotation: 0, opacity: 1 })
+                .set('#rl-ball', { x: 0, y: 0, rotation: 0, opacity: 1 })
+                .to('#rl-boost', { opacity: 1, duration: 0.2 })
+                .to('#rl-car', { x: 56, duration: 0.9, ease: 'power2.in' }, '<')
+                .to('#rl-car', { x: 120, y: -24, rotation: -10, transformOrigin: '50% 100%', duration: 0.32, ease: 'power1.out' })
+                .to('#rl-ball', { x: 96, y: -16, rotation: 300, transformOrigin: '50% 50%', duration: 0.45, ease: 'power2.out' }, '<0.1')
+                .to('#rl-boost', { opacity: 0, duration: 0.2 }, '<')
+                .fromTo('#rl-burst', { scale: 0.3, opacity: 1, transformOrigin: '50% 50%' }, { scale: 1.8, opacity: 0, duration: 0.6, ease: 'power2.out' }, '-=0.05')
+                .to('#rl-ball', { opacity: 0, duration: 0.2 }, '<')
+                .to('#rl-car', { x: 170, y: 0, rotation: 0, duration: 0.4, ease: 'power1.in' }, '<')
+                .to('#rl-car', { x: 220, opacity: 0, duration: 0.4 })
+                .to({}, { duration: 0.4 }), 0);
+
+            // Satisfactory : la foreuse tape en rythme
+            tl.add(gsap.to('#sf-drill', { y: 10, duration: 0.3, ease: 'power2.in', yoyo: true, repeat: -1 }), 0);
             return tl;
         },
     };

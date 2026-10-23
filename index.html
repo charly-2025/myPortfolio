@@ -1149,6 +1149,7 @@
 
                 <svg id="space-svg" class="stage-layer space-layer" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
                     <defs>
+                        <symbol id="mc-grass" viewBox="0 0 60 60"><polygon points="0,15 30,0 60,15 30,30" fill="#6cc644"/><polygon points="0,15 30,30 30,60 0,45" fill="#8b5a2b"/><polygon points="30,30 60,15 60,45 30,60" fill="#6e4520"/><polygon points="0,15 30,30 30,37 0,22" fill="#4e9a2e"/><polygon points="30,30 60,15 60,22 30,37" fill="#3f7f22"/><rect x="8" y="34" width="4" height="4" fill="#6e4520"/><rect x="18" y="44" width="4" height="4" fill="#a06a35"/><rect x="40" y="40" width="4" height="4" fill="#563518"/><rect x="50" y="30" width="4" height="4" fill="#8b5a2b"/><rect x="22" y="8" width="5" height="4" fill="#58ad34"/><rect x="38" y="16" width="5" height="4" fill="#7fd655"/></symbol><symbol id="mc-log" viewBox="0 0 60 60"><polygon points="0,15 30,0 60,15 30,30" fill="#c49a5e"/><polygon points="0,15 30,30 30,60 0,45" fill="#6b4a2b"/><polygon points="30,30 60,15 60,45 30,60" fill="#563a21"/><ellipse cx="30" cy="15" rx="14" ry="7" fill="none" stroke="#8d6b3c" stroke-width="2"/><rect x="10" y="26" width="3" height="16" fill="#563a21"/><rect x="44" y="28" width="3" height="16" fill="#46301b"/></symbol><symbol id="mc-leaves" viewBox="0 0 60 60"><polygon points="0,15 30,0 60,15 30,30" fill="#3f9b3a"/><polygon points="0,15 30,30 30,60 0,45" fill="#2f7a2c"/><polygon points="30,30 60,15 60,45 30,60" fill="#256325"/><rect x="12" y="10" width="5" height="5" fill="#57b84f"/><rect x="36" y="18" width="5" height="5" fill="#2c7a28"/><rect x="8" y="30" width="5" height="5" fill="#3f9b3a"/><rect x="42" y="36" width="5" height="5" fill="#1d4f1c"/></symbol><symbol id="mc-ore" viewBox="0 0 60 60"><polygon points="0,15 30,0 60,15 30,30" fill="#9aa0a6"/><polygon points="0,15 30,30 30,60 0,45" fill="#7d838a"/><polygon points="30,30 60,15 60,45 30,60" fill="#656b72"/><rect x="22" y="10" width="6" height="5" fill="#5ee7f0"/><rect x="34" y="16" width="5" height="4" fill="#bdf7fb"/><rect x="8" y="30" width="5" height="5" fill="#5ee7f0"/><rect x="16" y="42" width="4" height="4" fill="#2fb9c4"/><rect x="42" y="30" width="5" height="5" fill="#5ee7f0"/><rect x="50" y="38" width="4" height="4" fill="#2fb9c4"/></symbol>
                         <linearGradient id="spaceBg" x1="0" y1="0" x2="0" y2="1">
                             <stop offset="0" stop-color="#02030a"/>
                             <stop offset="1" stop-color="#0b1236"/>
@@ -1174,6 +1175,93 @@
                     <g id="planet-g">
                         <circle cx="980" cy="560" r="280" fill="url(#planet)"/>
                         <ellipse cx="980" cy="560" rx="420" ry="60" fill="none" stroke="#bdefff" stroke-opacity=".25" stroke-width="10" transform="rotate(-12 980 560)"/>
+                    </g>
+
+                    <!-- Minecraft -->
+                    <g id="mc">
+                        <g id="mc-island">
+                            <polygon points="270,530 360,575 420,545 370,593 350,585 330,603 300,555" fill="#5a3a1c"/><polygon points="340,585 350,585 344,605" fill="#4a2f16"/>
+                            <use href="#mc-grass" x="300" y="470" width="60" height="60"/><use href="#mc-leaves" x="240" y="380" width="60" height="60"/><use href="#mc-leaves" x="300" y="380" width="60" height="60"/><use href="#mc-grass" x="270" y="485" width="60" height="60"/><use href="#mc-grass" x="330" y="485" width="60" height="60"/><use href="#mc-log" x="270" y="455" width="60" height="60"/><use href="#mc-log" x="270" y="425" width="60" height="60"/><use href="#mc-leaves" x="270" y="395" width="60" height="60"/><use href="#mc-leaves" x="270" y="365" width="60" height="60"/><use href="#mc-grass" x="300" y="500" width="60" height="60"/><use href="#mc-grass" x="360" y="500" width="60" height="60"/><use href="#mc-leaves" x="300" y="410" width="60" height="60"/><use href="#mc-leaves" x="240" y="410" width="60" height="60"/><use href="#mc-grass" x="330" y="515" width="60" height="60"/>
+                            <g id="mc-ore"><use href="#mc-ore" x="330" y="485" width="60" height="60"/></g>
+                            <g id="mc-bits" fill="#5ee7f0">
+                                <rect x="356" y="511" width="6" height="6"/><rect x="360" y="505" width="5" height="5" fill="#9aa0a6"/><rect x="354" y="517" width="5" height="5" fill="#7d838a"/><rect x="364" y="513" width="6" height="6"/>
+                            </g>
+                            <g id="mc-pick">
+                                <rect x="402" y="479" width="6" height="44" fill="#8b5a2b" transform="rotate(35 405 523)"/>
+                                <path d="M382 483 q22 -14 48 4 l-6 6 q-18 -10 -36 -2 z" fill="#5ee7f0" stroke="#1f8c94" stroke-width="2" transform="rotate(35 405 523)"/>
+                            </g>
+                        </g>
+                    </g>
+                    <!-- Rocket League -->
+                    <g id="rl">
+                        <rect x="450" y="556" width="290" height="12" rx="6" fill="#141b33"/>
+                        <rect x="450" y="554" width="145" height="4" rx="2" fill="#2f7bff"/>
+                        <rect x="595" y="554" width="145" height="4" rx="2" fill="#ff8a2b"/>
+                        <g id="rl-goal" fill="none" stroke="#ff8a2b" stroke-width="4" stroke-linejoin="round">
+                            <path d="M694 556 L694 500 L736 500 L736 556"/>
+                            <g stroke-width="1.2" stroke-opacity=".5"><line x1="705" y1="500" x2="705" y2="556"/><line x1="716" y1="500" x2="716" y2="556"/><line x1="727" y1="500" x2="727" y2="556"/><line x1="694" y1="514" x2="736" y2="514"/><line x1="694" y1="528" x2="736" y2="528"/><line x1="694" y1="542" x2="736" y2="542"/></g>
+                        </g>
+                        <circle id="rl-burst" cx="715" cy="520" r="30" fill="none" stroke="#ffd36b" stroke-width="6" opacity="0"/>
+                        <g id="rl-ball">
+                            <g transform="translate(620 534)">
+                                <circle r="20" fill="#e9edf5"/>
+                                <circle r="20" fill="none" stroke="#7f8898" stroke-width="2"/>
+                                <polygon points="0,-8 7.6,-2.5 4.7,6.5 -4.7,6.5 -7.6,-2.5" fill="#9aa4bd"/>
+                                <path d="M0 -8 L0 -20 M7.6 -2.5 L18 -6 M4.7 6.5 L11 16 M-4.7 6.5 L-11 16 M-7.6 -2.5 L-18 -6" stroke="#9aa4bd" stroke-width="2"/>
+                            </g>
+                        </g>
+                        <g id="rl-car">
+                            <g transform="translate(456 526)">
+                                <ellipse id="rl-boost" cx="-14" cy="18" rx="18" ry="5" fill="url(#engine)" opacity="0"/>
+                                <path d="M2 24 Q2 17 9 15 L30 11 L44 3 Q48 0 54 0 L70 1 Q76 2 80 8 L91 12 Q97 14 97 20 L97 25 Q97 28 93 28 L6 28 Q2 28 2 24 Z" fill="#2f7bff"/>
+                                <path d="M46 5 L54 2.5 L68 3.5 L74 10 L40 12 Z" fill="#bdefff"/>
+                                <path d="M0 9 L12 9 L13 14 L4 15 Z" fill="#1d4fb0"/>
+                                <rect x="82" y="15" width="10" height="3" rx="1.5" fill="#ffd36b"/>
+                                <circle cx="22" cy="28" r="8" fill="#0b0f19"/><circle cx="22" cy="28" r="3.5" fill="#9aa4bd"/>
+                                <circle cx="78" cy="28" r="8" fill="#0b0f19"/><circle cx="78" cy="28" r="3.5" fill="#9aa4bd"/>
+                            </g>
+                        </g>
+                    </g>
+                    <!-- Satisfactory -->
+                    <g id="sf">
+                        <rect x="866" y="296" width="8" height="22" fill="#4a546d"/>
+                        <rect x="1052" y="296" width="8" height="12" fill="#4a546d"/>
+                        <rect x="846" y="284" width="230" height="14" rx="2" fill="#7f8898"/>
+                        <g stroke="#5a6378" stroke-width="1"><line x1="876" y1="284" x2="876" y2="298"/><line x1="906" y1="284" x2="906" y2="298"/><line x1="936" y1="284" x2="936" y2="298"/><line x1="966" y1="284" x2="966" y2="298"/><line x1="996" y1="284" x2="996" y2="298"/><line x1="1026" y1="284" x2="1026" y2="298"/><line x1="1056" y1="284" x2="1056" y2="298"/></g>
+                        <!-- foreuse -->
+                        <g>
+                            <rect x="858" y="238" width="44" height="46" rx="3" fill="#3a4256"/>
+                            <rect x="864" y="226" width="32" height="14" rx="2" fill="#f58220"/>
+                            <g id="sf-drill">
+                                <rect x="876" y="200" width="8" height="30" fill="#9aa4bd"/>
+                                <polygon points="872,200 888,200 880,190" fill="#c9cfdc"/>
+                            </g>
+                            <circle cx="880" cy="262" r="8" fill="none" stroke="#f58220" stroke-width="3" class="sf-gear"/>
+                        </g>
+                        <!-- tapis roulant -->
+                        <rect x="902" y="270" width="72" height="8" rx="2" fill="#2b3346"/>
+                        <line x1="904" y1="274" x2="972" y2="274" stroke="#5a6378" stroke-width="2" stroke-dasharray="6 6" class="sf-belt"/>
+                        <g class="sf-items" fill="#f58220">
+                            <rect x="904" y="262" width="8" height="8" rx="1"/>
+                            <rect x="904" y="262" width="8" height="8" rx="1"/>
+                            <rect x="904" y="262" width="8" height="8" rx="1"/>
+                        </g>
+                        <!-- usine -->
+                        <g>
+                            <rect x="986" y="186" width="12" height="34" fill="#4a546d"/>
+                            <rect x="1034" y="196" width="12" height="24" fill="#4a546d"/>
+                            <rect x="972" y="218" width="96" height="66" rx="3" fill="#e9883a"/>
+                            <polygon points="968,222 1020,204 1072,222" fill="#c9cfdc"/>
+                            <rect x="980" y="236" width="80" height="10" fill="#c2671f"/>
+                            <rect x="988" y="254" width="22" height="30" fill="#2b3346"/>
+                            <g class="sf-lights"><rect x="1020" y="256" width="10" height="8" rx="1" fill="#ffd36b"/><rect x="1036" y="256" width="10" height="8" rx="1" fill="#ffd36b"/><rect x="1052" y="256" width="8" height="8" rx="1" fill="#3ddc97"/></g>
+                        </g>
+                        <g fill="#c9cfdc">
+                            <circle class="sf-smoke" cx="992" cy="182" r="7"/>
+                            <circle class="sf-smoke s2" cx="992" cy="182" r="7"/>
+                            <circle class="sf-smoke s3" cx="1040" cy="192" r="6"/>
+                            <circle class="sf-smoke s4" cx="1040" cy="192" r="6"/>
+                        </g>
                     </g>
                     <line id="shooting-star" x1="0" y1="0" x2="90" y2="30" stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0"/>
                     <g id="ship" transform="translate(-200 280)">
@@ -1211,7 +1299,7 @@
                     <p>Explorer, coopérer, construire et optimiser : les jeux auxquels je joue nourrissent ma curiosité pour les systèmes complexes.</p>
                     <ul class="games">
                         <li><i class="fas fa-rocket"></i><div><strong>Star Citizen</strong><span>Exploration spatiale et jeu en équipage</span></div></li>
-                        <li><i class="fas fa-car-side"></i><div><strong>Rocket League</strong><span>Réflexes, coordination et esprit d'équipe</span></div></li>
+                        <li><svg class="icon-car" viewBox="0 0 32 16" aria-hidden="true"><defs><mask id="car-mask"><rect width="32" height="16" fill="#fff"/><circle cx="7.4" cy="12" r="3.4" fill="#000"/><circle cx="25" cy="12" r="3.4" fill="#000"/></mask></defs><path mask="url(#car-mask)" fill="currentColor" fill-rule="evenodd" d="M1.2 12.2L0.9 9.7Q0.9 8.7 2 8.4L5.6 7.6Q9 6.8 11.6 5Q13.6 3.7 16.6 3.7L19.1 3.8Q21.2 4 23.1 5.5L24.4 6.5Q28.2 7 30.5 8.2Q31.7 8.9 31.7 10.4L31.5 12.2ZM12.8 5.7Q14.4 4.8 16.5 4.8L18.7 4.9Q20.3 5 21.8 6.4ZM27.7 8.5L30.3 9.1L30 9.7L27.5 9.2Z"/><path fill="currentColor" d="M0.4 5.9H5.3L5.7 6.8L2.8 7.6V8.3L1.7 8.6V7.1H0.4Z"/><circle fill="currentColor" cx="7.4" cy="12" r="2.6"/><circle fill="currentColor" cx="25" cy="12" r="2.6"/></svg><div><strong>Rocket League</strong><span>Réflexes, coordination et esprit d'équipe</span></div></li>
                         <li><i class="fas fa-cubes"></i><div><strong>Minecraft</strong><span>Construction, créativité et redstone</span></div></li>
                         <li><i class="fas fa-industry"></i><div><strong>Satisfactory</strong><span>Automatisation et optimisation d'usines</span></div></li>
                     </ul>

@@ -1718,3 +1718,68 @@ h3 {
 .skills-panel .chips-sm li {
     padding: 2px 8px;
 }
+
+/* ---------- Jeux vidéo : icône voiture ---------- */
+.games .icon-car {
+    flex: none;
+    width: 24px;
+    height: 12px;
+    margin-top: 6px;
+    color: var(--accent);
+}
+
+/* ---------- Satisfactory : usine animée ---------- */
+.sf-belt {
+    animation: belt 0.6s linear infinite;
+}
+
+@keyframes belt {
+    to { stroke-dashoffset: -12; }
+}
+
+.sf-items rect {
+    animation: conveyor 2.4s linear infinite;
+}
+
+.sf-items rect:nth-child(2) { animation-delay: -0.8s; }
+.sf-items rect:nth-child(3) { animation-delay: -1.6s; }
+
+@keyframes conveyor {
+    0% { transform: translateX(0); opacity: 0; }
+    10% { opacity: 1; }
+    85% { opacity: 1; }
+    100% { transform: translateX(62px); opacity: 0; }
+}
+
+.sf-gear {
+    stroke-dasharray: 6 4;
+    transform-box: fill-box;
+    transform-origin: 50% 50%;
+    animation: gear 1.6s linear infinite;
+}
+
+@keyframes gear {
+    to { transform: rotate(360deg); }
+}
+
+.sf-smoke {
+    transform-box: fill-box;
+    transform-origin: 50% 50%;
+    animation: smoke 3s ease-out infinite;
+}
+
+.sf-smoke.s2 { animation-delay: 1.5s; }
+.sf-smoke.s3 { animation-delay: 0.7s; }
+.sf-smoke.s4 { animation-delay: 2.2s; }
+
+@keyframes smoke {
+    0% { transform: translate(0, 0) scale(0.6); opacity: 0.8; }
+    100% { transform: translate(10px, -46px) scale(2.2); opacity: 0; }
+}
+
+.sf-lights rect {
+    animation: led 1.2s steps(2) infinite;
+}
+
+.sf-lights rect:nth-child(2) { animation-delay: 0.4s; }
+.sf-lights rect:nth-child(3) { animation-delay: 0.8s; }
