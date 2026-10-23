@@ -265,7 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const tl = gsap.timeline({ paused: true });
             // Le vaisseau traverse l'écran en boucle
             tl.add(gsap.timeline({ repeat: -1, repeatDelay: 0.6 })
-                .fromTo('#ship', { x: -260, y: 330, scale: 0.5, rotation: 0 }, { x: 1460, y: 250, scale: 0.5, duration: 7, ease: 'none' })
+                .fromTo('#ship', { x: -260, y: 335, scale: 0.5, rotation: 0 }, { x: 1460, y: 350, scale: 0.5, duration: 7, ease: 'none' })
                 .to('#ship', { rotation: -4, duration: 1.5, ease: 'sine.inOut', yoyo: true, repeat: 3 }, 0), 0);
             tl.add(gsap.timeline({ repeat: -1, repeatDelay: 2.5, delay: 1.5 })
                 .fromTo('#shooting-star', { x: 200, y: 40, opacity: 0 }, { x: 700, y: 210, opacity: 1, duration: 0.35, ease: 'power1.in' })
@@ -273,9 +273,9 @@ document.addEventListener('DOMContentLoaded', () => {
             // Minecraft : la pioche frappe le minerai jusqu'à ce qu'il casse, puis il réapparaît
             gsap.set('#mc-bits', { opacity: 0 });
             const hit = () => gsap.timeline()
-                .to('#mc-pick', { rotation: -28, svgOrigin: '405 523', duration: 0.18, ease: 'power2.in' })
+                .to('#mc-pick', { rotation: -28, svgOrigin: '435 531', duration: 0.18, ease: 'power2.in' })
                 .to('#mc-ore', { x: 1.5, duration: 0.05, yoyo: true, repeat: 1 })
-                .to('#mc-pick', { rotation: 0, svgOrigin: '405 523', duration: 0.25, ease: 'power1.out' });
+                .to('#mc-pick', { rotation: 0, svgOrigin: '435 531', duration: 0.25, ease: 'power1.out' });
             tl.add(gsap.timeline({ repeat: -1, repeatDelay: 0.4 })
                 .add(hit()).add(hit()).add(hit())
                 .to('#mc-ore', { scale: 0, transformOrigin: '50% 60%', duration: 0.2, ease: 'back.in(2)' })
@@ -300,7 +300,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 .to({}, { duration: 0.4 }), 0);
 
             // Satisfactory : la foreuse tape en rythme
-            tl.add(gsap.to('#sf-drill', { y: 10, duration: 0.3, ease: 'power2.in', yoyo: true, repeat: -1 }), 0);
+            tl.add(gsap.to('#sf-drill', { y: 6, duration: 0.3, ease: 'power2.in', yoyo: true, repeat: -1 }), 0);
             return tl;
         },
     };

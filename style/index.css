@@ -1764,7 +1764,7 @@ h3 {
     0% { transform: translateX(0); opacity: 0; }
     10% { opacity: 1; }
     85% { opacity: 1; }
-    100% { transform: translateX(62px); opacity: 0; }
+    100% { transform: translateX(52px); opacity: 0; }
 }
 
 .sf-gear {
@@ -1799,3 +1799,18 @@ h3 {
 
 .sf-lights rect:nth-child(2) { animation-delay: 0.4s; }
 .sf-lights rect:nth-child(3) { animation-delay: 0.8s; }
+
+.sf-glow {
+    animation: furnace 1.4s ease-in-out infinite alternate;
+}
+
+@keyframes furnace {
+    from { fill: #ff7a1a; }
+    to { fill: #ffc04d; }
+}
+
+.sf-fan {
+    transform-box: fill-box;
+    transform-origin: 50% 50%;
+    animation: gear 0.8s linear infinite;
+}
