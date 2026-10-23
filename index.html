@@ -3,247 +3,1245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Charly Richard-Fromont</title>
-    <meta name="description" content="Portfolio of Charly, showcasing front-end projects, technical skills, learning progress, and professional experiences.">
+    <title>Charly Richard-Fromont · Portfolio</title>
+    <meta name="description" content="Portfolio de Charly Richard-Fromont, étudiant en Bachelor Informatique spécialisation Cybersécurité à Epitech Rennes. Recherche d'alternance en IT pour la rentrée 2027.">
+    <meta name="theme-color" content="#07090f">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style/index.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
 </head>
 
 <body>
-    <header>
-        <div class="header-content">
-            <div class="header-title">
-                <i class="fas fa-code"></i> Mon Portfolio
-            </div>
-            <button id="nav-toggle" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-            <nav class="header-nav-bar">
-                <button id="nav-close" aria-label="Close navigation">
-                    <i class="fas fa-times"></i>
-                </button>
-                <a href="#home"><i class="fas fa-home"></i> Home</a>
-                <a href="#about"><i class="fas fa-user"></i> About</a>
-                <a href="#education"><i class="fas fa-graduation-cap"></i> Education</a>
-                <a href="#skills"><i class="fas fa-tools"></i> Skills</a>
-                <a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a>
-                <a href="#experience"><i class="fas fa-briefcase"></i> Experience</a>
-                <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
-            </nav>
-        </div>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+    <header class="site-header">
+        <a href="#home" class="brand" data-nav>CRF<span>.</span></a>
+        <nav class="site-nav" id="site-nav">
+            <a href="#about" data-nav>Profil</a>
+            <a href="#education" data-nav>Formation</a>
+            <a href="#experience" data-nav>Entreprise</a>
+            <a href="#projects" data-nav>Projets</a>
+            <a href="#homelab" data-nav>Homelab</a>
+            <a href="#skills" data-nav>Compétences</a>
+            <a href="#hobbies" data-nav>Hobbies</a>
+            <a href="#contact" data-nav>Contact</a>
+        </nav>
+        <a href="CV-Charly-Richard-Fromont.pdf" download class="btn btn-small btn-ghost header-cv">
+            <i class="fas fa-download"></i> CV
+        </a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="site-nav">
+            <span></span><span></span>
+        </button>
     </header>
+
+    <nav class="side-dots" aria-label="Sections">
+        <a href="#home" data-nav data-label="Accueil"></a>
+        <a href="#about" data-nav data-label="Profil"></a>
+        <a href="#education" data-nav data-label="Formation"></a>
+        <a href="#experience" data-nav data-label="Entreprise"></a>
+        <a href="#projects" data-nav data-label="Projets d'études"></a>
+        <a href="#homelab" data-nav data-label="Homelab"></a>
+        <a href="#perso" data-nav data-label="Projets perso"></a>
+        <a href="#skills" data-nav data-label="Compétences"></a>
+        <a href="#offit" data-nav data-label="Hors IT"></a>
+        <a href="#hobbies" data-nav data-label="Hobbies"></a>
+        <a href="#contact" data-nav data-label="Contact"></a>
+    </nav>
+
     <main>
-        <div class="main-content">
-            <section id="home" class="main-home">
-                <div class="hero-content">
-                    <h1>Bonjour, je suis <span class="highlight">Charly Richard-Fromont</span></h1>
-                    <h2>Développeur d'application Full-Stack</h2>
-                    <p>Étudiant en Bachelor Informatique à Epitech, spécialisé en développement full-stack, data et IA.</p>
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn-primary">Voir mes Projets</a>
-                        <a href="Cv Charly Richard-Fromont .pdf" download class="btn-secondary">
-                            <i class="fas fa-download"></i> Télécharger CV
-                        </a>
+        <!-- ============ HERO ============ -->
+        <section id="home" class="hero">
+            <div class="hero-bg" aria-hidden="true">
+                <div class="grid-floor"></div>
+                <div class="orb orb-a"></div>
+                <div class="orb orb-b"></div>
+            </div>
+
+            <div class="hero-inner">
+                <div class="hero-text">
+                    <p class="status-pill"><span class="dot"></span> Recherche d'alternance IT · Rentrée 2027</p>
+                    <h1 class="hero-title">
+                        <span class="line"><span>Charly</span></span>
+                        <span class="line"><span>Richard-Fromont</span></span>
+                    </h1>
+                    <p class="hero-role">Étudiant en Bachelor Informatique, spécialisation <strong>Cybersécurité</strong> à Epitech Rennes.</p>
+                    <div class="hero-actions">
+                        <a href="#about" data-nav class="btn btn-primary">Découvrir mon parcours <i class="fas fa-arrow-down"></i></a>
+                        <a href="CV-Charly-Richard-Fromont.pdf" download class="btn btn-ghost"><i class="fas fa-file-arrow-down"></i> Télécharger le CV</a>
                     </div>
-                </div>
-                <div class="hero-image">
-                    <img src="crf.webp" alt="Photo de Profil CRF" />
-                </div>
-            </section>
-
-            <section id="about" class="main-about">
-                <h2><i class="fas fa-user"></i> À Propos de Moi</h2>
-                <p>
-                    Actuellement étudiant en 1ère année à Epitech, je suis à la recherche d'un stage de 1 à 3 mois 
-                    (juin à août) en développement full-stack ou en data/IA.
-                </p>
-                <p>
-                    Je suis polyvalent, autonome, coopératif et toujours à l'écoute. J'aime travailler en équipe 
-                    et relever des défis techniques.
-                </p>
-                <div class="about-details">
-                    <div><i class="fas fa-map-marker-alt"></i> Localisation : Rennes / Vannes</div>
-                    <div><i class="fas fa-car"></i> Véhiculé : Permis B</div>
-                </div>
-            </section>
-
-            <section id="education" class="main-education">
-                <h2><i class="fas fa-graduation-cap"></i> Formation</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3>Epitech</h3>
-                            <p>Bachelor Informatique (Bac+3) - Concepteur Développeur d'Applications</p>
-                            <span>2025 - 2028</span>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3>Lycée St Paul Vannes</h3>
-                            <p>Baccalauréat Général / Spécialités Mathématiques et NSI (Avec Mention)</p>
-                            <span>2022 - 2025</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="skills" class="main-skills">
-                <h2><i class="fas fa-tools"></i> Compétences</h2>
-
-                <div class="skills-section">
-                    <h3>Hard Skills</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <i class="fab fa-html5"></i>
-                            <span>HTML / CSS</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-js-square"></i>
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-react"></i>
-                            <span>ReactJS</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-node-js"></i>
-                            <span>NodeJS / ExpressJS</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-php"></i>
-                            <span>PHP</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-python"></i>
-                            <span>Python</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-database"></i>
-                            <span>SQL / MySQL</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-docker"></i>
-                            <span>Docker</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-github"></i>
-                            <span>GitHub</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-figma"></i>
-                            <span>Figma</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skills-section">
-                    <h3>Soft Skills</h3>
-                    <ul>
-                        <li>Polyvalent</li>
-                        <li>Autonome</li>
-                        <li>Responsable</li>
-                        <li>Assidu</li>
-                        <li>Coopératif</li>
-                        <li>À l'écoute</li>
+                    <ul class="hero-meta">
+                        <li><i class="fas fa-location-dot"></i> Rennes · Vannes</li>
+                        <li><i class="fas fa-car"></i> Véhiculé</li>
+                        <li><i class="fas fa-language"></i> Anglais B1+</li>
                     </ul>
                 </div>
 
-                <div class="skills-section">
-                    <h3>Langues</h3>
-                    <p><i class="fas fa-language"></i> Anglais : B1+</p>
-                </div>
-            </section>
-
-            <section id="projects" class="main-projects">
-                <h2><i class="fas fa-project-diagram"></i> Projets</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <h3>Product Design App</h3>
-                        <p>
-                            Conception et développement d'une application sociale web de partage de contenus courts.
-                            Approche produit complète / analyse des besoins / MVP / prototypage / développement full-stack.
-                        </p>
-                        <div class="project-tech">
-                            <span>React</span> <span>Node.js</span> <span>MongoDB</span>
+                <div class="hero-card">
+                    <div class="terminal">
+                        <div class="terminal-bar">
+                            <span></span><span></span><span></span>
+                            <p>charly@epitech: ~</p>
                         </div>
-                    </div>
-                    <div class="project-card">
-                        <h3>E-Todo</h3>
-                        <p>
-                            Application web de gestion de tâches en full-stack avec base de données MySQL,
-                            backend Node.js et frontend React. Architecture claire et scalable.
-                        </p>
-                        <div class="project-tech">
-                            <span>React</span> <span>Node.js</span> <span>MySQL</span>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <h3>Hackathon : The Shifters</h3>
-                        <p>
-                            Développement d'une application de comparaison de l'impact carbone des villes.
-                            Objectif : aider à convaincre les collectivités avec des données concrètes.
-                        </p>
-                        <div class="project-tech">
-                            <span>Python</span> <span>Flask</span> <span>Data Analysis</span>
+                        <div class="terminal-body">
+                            <div class="terminal-id">
+                                <img src="crf.webp" alt="Portrait de Charly Richard-Fromont" width="200" height="250">
+                                <div>
+                                    <p class="t-name">Charly R.-F.</p>
+                                    <p class="t-sub">Bachelor 2 · Cybersécurité</p>
+                                </div>
+                            </div>
+                            <pre id="terminal-out" aria-label="Présentation façon terminal"></pre>
                         </div>
                     </div>
                 </div>
-            </section>
-
-            <section id="experience" class="main-experience">
-                <h2><i class="fas fa-briefcase"></i> Expérience</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3>Surveillant d'internat</h3>
-                            <p>Lycée St Paul - Vannes</p>
-                            <p>Supervision des élèves / gestion du quotidien / maintien d'un environnement sécurisé.</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3>Serveur Polyvalent (Job d'été)</h3>
-                            <p>Kalon Digor</p>
-                            <p>Service en salle / gestion des commandes / travail en équipe dans un environnement dynamique.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section id="contact" class="main-contact">
-                <h2><i class="fas fa-envelope"></i> Contactez-moi</h2>
-                <form onsubmit="generateTxt(event)">
-                    <input type="text" name="name" placeholder="Votre Nom" required>
-                    <input type="email" name="email" placeholder="Votre Email" required>
-                    <textarea name="message" placeholder="Votre Message" required></textarea>
-                    <button type="submit" class="btn-primary">Envoyer</button>
-                </form>
-                <div id="successMessage" class="success-message">
-                    <i class="fas fa-check"></i> Message envoyé avec succès !
-                </div>
-            </section>
-        </div>
-    </main>
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="mailto:charly.richard-fromont@epitech.eu" target="_blank"><i class="fas fa-envelope"></i> charly.richard-fromont@epitech.eu</a>
-                <a href="https://www.linkedin.com/in/charly-richard-fromont-b95b0a2b6" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="https://github.com/charly-2025" target="_blank"><i class="fab fa-github"></i> GitHub</a>
             </div>
-            <p>&copy; droits réservés.</p>
-        </div>
-    </footer>
-    <script src="js/main.js"></script>
 
+            <a href="#about" data-nav class="scroll-hint" aria-label="Défiler vers le bas">
+                <span class="mouse"><span></span></span>
+                <span>Scroll</span>
+            </a>
+        </section>
+
+        <!-- ============ PROFIL ============ -->
+        <section id="about" class="section about">
+            <div class="container">
+                <p class="eyebrow reveal">01 · Profil</p>
+                <h2 class="section-title reveal">Sécurité offensive & défensive,<br>apprise <span class="grad">en faisant</span>.</h2>
+                <div class="about-grid">
+                    <div class="about-text reveal">
+                        <p>Étudiant en 2<sup>e</sup> année de Bachelor Informatique à <strong>Epitech Rennes</strong>, spécialisation Cybersécurité. Je me forme à la sécurité offensive et défensive à travers une pédagogie par projets : pentest web, CTF, cryptographie.</p>
+                        <p>Je recherche une <strong>alternance dans l'informatique pour la rentrée 2027</strong> (3<sup>e</sup> année) afin de mettre ces compétences au service d'une équipe et de continuer à progresser sur le terrain.</p>
+                    </div>
+                    <ul class="stat-grid">
+                        <li class="stat reveal"><span class="stat-k">Bac+3</span><span class="stat-v">Bachelor Epitech 2025 - 2028</span></li>
+                        <li class="stat reveal"><span class="stat-k">Cyber</span><span class="stat-v">Pentest web, CTF, crypto</span></li>
+                        <li class="stat reveal"><span class="stat-k">2027</span><span class="stat-v">Alternance recherchée</span></li>
+                        <li class="stat reveal"><span class="stat-k">B1+</span><span class="stat-v">Anglais</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ FORMATION ============ -->
+        <section id="education" class="scene scene-edu">
+            <div class="scene-art">
+                <svg id="school-svg" viewBox="0 0 600 420" role="img" aria-label="Illustration d'un campus Epitech avec des étudiants">
+                    <defs>
+                        <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0" stop-color="#1b2a4a"/>
+                            <stop offset="1" stop-color="#101a30"/>
+                        </linearGradient>
+                        <linearGradient id="facade" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0" stop-color="#2a3550"/>
+                            <stop offset="1" stop-color="#1c2438"/>
+                        </linearGradient>
+                        <radialGradient id="signGlow" cx="0.5" cy="0.5" r="0.5">
+                            <stop offset="0" stop-color="#4cc9f0" stop-opacity=".45"/>
+                            <stop offset="1" stop-color="#4cc9f0" stop-opacity="0"/>
+                        </radialGradient>
+                    </defs>
+
+                    <g id="edu-sky">
+                        <circle cx="520" cy="70" r="26" fill="#ffd36b" opacity=".9"/>
+                        <circle cx="520" cy="70" r="44" fill="#ffd36b" opacity=".08"/>
+                        <g id="clouds" fill="#ffffff" opacity=".07">
+                            <ellipse cx="90" cy="70" rx="46" ry="14"/>
+                            <ellipse cx="120" cy="60" rx="30" ry="14"/>
+                            <ellipse cx="400" cy="40" rx="40" ry="10"/>
+                        </g>
+                    </g>
+
+                    <rect id="edu-ground" x="10" y="358" width="580" height="4" rx="2" fill="#3a4766"/>
+                    <rect x="40" y="362" width="520" height="40" fill="#0f1524" opacity=".6"/>
+
+                    <g id="school-wings">
+                        <rect x="52" y="232" width="74" height="126" rx="4" fill="url(#facade)"/>
+                        <rect x="474" y="232" width="74" height="126" rx="4" fill="url(#facade)"/>
+                        <g fill="#0f182b">
+                            <rect x="64" y="248" width="20" height="26" rx="2" class="win"/>
+                            <rect x="94" y="248" width="20" height="26" rx="2" class="win"/>
+                            <rect x="64" y="290" width="20" height="26" rx="2" class="win"/>
+                            <rect x="94" y="290" width="20" height="26" rx="2" class="win"/>
+                            <rect x="486" y="248" width="20" height="26" rx="2" class="win"/>
+                            <rect x="516" y="248" width="20" height="26" rx="2" class="win"/>
+                            <rect x="486" y="290" width="20" height="26" rx="2" class="win"/>
+                            <rect x="516" y="290" width="20" height="26" rx="2" class="win"/>
+                        </g>
+                    </g>
+
+                    <g id="school-main">
+                        <rect x="130" y="150" width="340" height="208" rx="6" fill="url(#facade)"/>
+                        <rect x="130" y="150" width="340" height="10" rx="4" fill="#38466a"/>
+                        <g fill="url(#glass)" stroke="#2f3d5e" stroke-width="1">
+                            <rect x="150" y="176" width="44" height="40" rx="2" class="win"/>
+                            <rect x="204" y="176" width="44" height="40" rx="2" class="win"/>
+                            <rect x="258" y="176" width="44" height="40" rx="2" class="win"/>
+                            <rect x="312" y="176" width="44" height="40" rx="2" class="win"/>
+                            <rect x="366" y="176" width="44" height="40" rx="2" class="win"/>
+                            <rect x="420" y="176" width="32" height="40" rx="2" class="win"/>
+                            <rect x="150" y="228" width="44" height="40" rx="2" class="win"/>
+                            <rect x="204" y="228" width="44" height="40" rx="2" class="win"/>
+                            <rect x="258" y="228" width="44" height="40" rx="2" class="win"/>
+                            <rect x="312" y="228" width="44" height="40" rx="2" class="win"/>
+                            <rect x="366" y="228" width="44" height="40" rx="2" class="win"/>
+                            <rect x="420" y="228" width="32" height="40" rx="2" class="win"/>
+                            <rect x="150" y="282" width="44" height="40" rx="2" class="win"/>
+                            <rect x="204" y="282" width="44" height="40" rx="2" class="win"/>
+                            <rect x="366" y="282" width="44" height="40" rx="2" class="win"/>
+                            <rect x="420" y="282" width="32" height="40" rx="2" class="win"/>
+                        </g>
+                        <!-- entrée -->
+                        <rect x="262" y="284" width="90" height="74" rx="3" fill="#0b1222" stroke="#4cc9f0" stroke-opacity=".5"/>
+                        <line x1="307" y1="290" x2="307" y2="358" stroke="#4cc9f0" stroke-opacity=".5"/>
+                        <rect x="250" y="278" width="114" height="6" rx="2" fill="#4cc9f0" opacity=".8"/>
+                        <rect x="244" y="358" width="126" height="5" fill="#2a3550"/>
+                    </g>
+
+                    <g id="epi-sign">
+                        <ellipse id="sign-glow" cx="300" cy="118" rx="150" ry="40" fill="url(#signGlow)"/>
+                        <rect x="232" y="132" width="6" height="18" fill="#38466a"/>
+                        <rect x="362" y="132" width="6" height="18" fill="#38466a"/>
+                        <rect x="186" y="96" width="228" height="42" rx="6" fill="#05070d" stroke="#4cc9f0" stroke-opacity=".6"/>
+                        <text x="300" y="127" text-anchor="middle" font-family="Space Grotesk, Arial Black, sans-serif" font-weight="700" font-size="30" letter-spacing="3" fill="#ffffff">EPITECH<tspan fill="#4cc9f0">.</tspan></text>
+                    </g>
+
+                    <g id="students">
+                        <g class="student" transform="translate(-40 358)">
+                            <line x1="0" y1="-14" x2="0" y2="0" stroke="#1f2a44" stroke-width="4" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" values="25 0 -14;-25 0 -14;25 0 -14" dur=".6s" repeatCount="indefinite"/></line>
+                            <line x1="0" y1="-14" x2="0" y2="0" stroke="#2a3550" stroke-width="4" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" values="-25 0 -14;25 0 -14;-25 0 -14" dur=".6s" repeatCount="indefinite"/></line>
+                            <rect x="-10" y="-29" width="6" height="12" rx="2" fill="#7b61ff"/>
+                            <rect x="-5" y="-31" width="11" height="19" rx="4" fill="#4cc9f0"/>
+                            <circle cx="0.5" cy="-37" r="5.5" fill="#f0c4a0"/>
+                            <path d="M-5 -38 Q-4 -44 1 -43.5 Q6 -43 6 -38 Q3 -41 -5 -38 Z" fill="#3b2a20"/>
+                        </g>
+                        <g class="student" transform="translate(-40 358)">
+                            <line x1="0" y1="-14" x2="0" y2="0" stroke="#1f2a44" stroke-width="4" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" values="25 0 -14;-25 0 -14;25 0 -14" dur=".6s" repeatCount="indefinite"/></line>
+                            <line x1="0" y1="-14" x2="0" y2="0" stroke="#2a3550" stroke-width="4" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" values="-25 0 -14;25 0 -14;-25 0 -14" dur=".6s" repeatCount="indefinite"/></line>
+                            <rect x="-10" y="-29" width="6" height="12" rx="2" fill="#3ddc97"/>
+                            <rect x="-5" y="-31" width="11" height="19" rx="4" fill="#e8ecf4"/>
+                            <circle cx="0.5" cy="-37" r="5.5" fill="#d9a67f"/>
+                            <path d="M-5 -38 Q-4 -44 1 -43.5 Q6 -43 6 -38 Q3 -41 -5 -38 Z" fill="#1f1b18"/>
+                        </g>
+                        <g class="student" transform="translate(-40 358)">
+                            <line x1="0" y1="-14" x2="0" y2="0" stroke="#1f2a44" stroke-width="4" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" values="25 0 -14;-25 0 -14;25 0 -14" dur=".6s" repeatCount="indefinite"/></line>
+                            <line x1="0" y1="-14" x2="0" y2="0" stroke="#2a3550" stroke-width="4" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" values="-25 0 -14;25 0 -14;-25 0 -14" dur=".6s" repeatCount="indefinite"/></line>
+                            <rect x="-10" y="-29" width="6" height="12" rx="2" fill="#ffd36b"/>
+                            <rect x="-5" y="-31" width="11" height="19" rx="4" fill="#7b61ff"/>
+                            <circle cx="0.5" cy="-37" r="5.5" fill="#e6b894"/>
+                            <path d="M-5 -38 Q-4 -44 1 -43.5 Q6 -43 6 -38 Q3 -41 -5 -38 Z" fill="#6b3f22"/>
+                        </g>
+                    </g>
+
+                    <g id="trees">
+                        <g class="tree">
+                            <rect x="22" y="320" width="6" height="40" fill="#3b2c22"/>
+                            <circle cx="25" cy="310" r="20" fill="#1f6f5c"/>
+                            <circle cx="34" cy="298" r="13" fill="#2a8a71"/>
+                        </g>
+                        <g class="tree">
+                            <rect x="568" y="324" width="6" height="36" fill="#3b2c22"/>
+                            <circle cx="571" cy="314" r="18" fill="#1f6f5c"/>
+                            <circle cx="562" cy="304" r="11" fill="#2a8a71"/>
+                        </g>
+                    </g>
+
+                    <g id="grad-cap" transform="translate(470 120)">
+                        <polygon points="0,-12 30,0 0,12 -30,0" fill="#e8ecf4"/>
+                        <rect x="-14" y="2" width="28" height="12" rx="3" fill="#c9cfdc"/>
+                        <path d="M18 -3 L22 18" stroke="#ffd36b" stroke-width="2"/>
+                        <circle cx="22" cy="20" r="3" fill="#ffd36b"/>
+                    </g>
+                </svg>
+            </div>
+
+            <div class="scene-text">
+                <p class="eyebrow">02 · Formation</p>
+                <h2 class="section-title">Mon parcours<br>scolaire</h2>
+                <div class="card edu-card">
+                    <div class="card-head">
+                        <span class="badge">2025 - 2028</span>
+                        <span class="card-icon"><i class="fas fa-graduation-cap"></i></span>
+                    </div>
+                    <h3>Epitech Rennes</h3>
+                    <p class="card-sub">Bachelor Informatique (Bac+3) · spécialisation Cybersécurité<br>Titre de Concepteur Développeur d'Applications</p>
+                    <p>Pédagogie par projets orientée sécurité des systèmes, développement logiciel et architecture applicative. Travail en équipe sur des projets techniques favorisant l'autonomie et la résolution de problèmes.</p>
+                </div>
+                <div class="card edu-card">
+                    <div class="card-head">
+                        <span class="badge">2022 - 2025</span>
+                        <span class="card-icon"><i class="fas fa-school"></i></span>
+                    </div>
+                    <h3>Lycée St Paul, Vannes</h3>
+                    <p class="card-sub">Baccalauréat Général · Spécialités Mathématiques et NSI · Mention</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ EXPÉRIENCE ENTREPRISE IT ============ -->
+        <section id="experience" class="section work">
+            <div class="container">
+                <p class="eyebrow reveal">03 · Stage &amp; expérience entreprise</p>
+                <h2 class="section-title reveal">En <span class="grad">entreprise</span></h2>
+
+                <article class="card work-card reveal">
+                    <div class="work-meta">
+                        <span class="badge badge-accent">Juin à juillet 2026</span>
+                        <h3>Développeur</h3>
+                        <p class="work-company"><i class="fas fa-industry"></i> Plastrobreizh</p>
+                        <ul class="work-facts">
+                            <li><i class="fas fa-file-signature"></i> Stage (1 mois) puis CDD (1 mois)</li>
+                            <li><i class="fas fa-screwdriver-wrench"></i> QlikSense</li>
+                        </ul>
+                        <svg class="mini-dash" viewBox="0 0 220 110" aria-hidden="true">
+                            <rect x="0" y="0" width="220" height="110" rx="10" fill="rgba(255,255,255,.03)" stroke="rgba(255,255,255,.08)"/>
+                            <g class="bars">
+                                <rect x="16" y="30" width="16" height="64" rx="3"/>
+                                <rect x="40" y="30" width="16" height="64" rx="3"/>
+                                <rect x="64" y="30" width="16" height="64" rx="3"/>
+                                <rect x="88" y="30" width="16" height="64" rx="3"/>
+                                <rect x="112" y="30" width="16" height="64" rx="3"/>
+                            </g>
+                            <polyline class="trend" points="140,82 156,70 172,74 188,52 204,40" fill="none" stroke="#3ddc97" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle class="trend-dot" cx="204" cy="40" r="4" fill="#3ddc97"/>
+                            <rect x="16" y="14" width="60" height="6" rx="3" fill="rgba(255,255,255,.15)"/>
+                        </svg>
+                    </div>
+                    <div class="work-body">
+                        <ul class="bullets">
+                            <li>Développement d'une application de visualisation de données pour le suivi de la production, des ventes et des indicateurs de performance.</li>
+                            <li>Conception et mise en place d'un pipeline ETL (extraction, transformation, chargement des données).</li>
+                            <li>Points d'avancement réguliers avec l'administration pour prioriser les évolutions.</li>
+                        </ul>
+                        <div class="tags"><span>QlikSense</span><span>ETL</span><span>Data Viz</span><span>KPI</span></div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- ============ PROJETS D'ÉTUDES ============ -->
+        <section id="projects" class="h-scene">
+            <div class="h-head container">
+                <p class="eyebrow">04 · Projets d'études</p>
+                <h2 class="section-title">Ce que j'ai <span class="grad">construit</span> à Epitech</h2>
+            </div>
+            <div class="h-viewport">
+                <div class="h-track">
+                    <article class="card xp-card">
+                        <div class="card-head">
+                            <span class="badge">Cybersécurité</span>
+                            <span class="card-icon"><i class="fas fa-user-secret"></i></span>
+                        </div>
+                        <h3>Hack &amp; Juice : pentest OWASP Juice Shop</h3>
+                        <ul class="bullets">
+                            <li>Recherche et exploitation de vulnérabilités web sur une plateforme e-commerce factice.</li>
+                            <li>Mise en pratique des failles du OWASP Top 10 : injection SQL, XSS, contrôle d'accès cassé…</li>
+                            <li>Une fiche de rapport par challenge : méthodologie, impact, correction.</li>
+                        </ul>
+                        <div class="tags"><span>Burp Suite</span><span>SQLMap</span><span>Postman</span><span>John the Ripper</span></div>
+                        <a class="repo-link" href="https://github.com/charly-2025/Hack-And-Juice-Epitech" target="_blank" rel="noopener"><i class="fab fa-github"></i> Voir le repo <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    </article>
+                    <article class="card xp-card">
+                        <div class="card-head">
+                            <span class="badge">Cybersécurité</span>
+                            <span class="card-icon"><i class="fas fa-skull-crossbones"></i></span>
+                        </div>
+                        <h3>Exegol : writeups de pentest</h3>
+                        <ul class="bullets">
+                            <li>Challenges offensifs résolus depuis Exegol : fuzzing, injections, cracking, reverse.</li>
+                            <li>De l'énumération jusqu'aux flags user et root, chaque étape documentée.</li>
+                        </ul>
+                        <div class="tags"><span>Exegol</span><span>nmap</span><span>ffuf</span><span>John the Ripper</span></div>
+                        <a class="repo-link" href="https://github.com/charly-2025/Exegol-Epitech" target="_blank" rel="noopener"><i class="fab fa-github"></i> Voir le repo <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    </article>
+                    <article class="card xp-card">
+                        <div class="card-head">
+                            <span class="badge">IA · Sécurité des LLM</span>
+                            <span class="card-icon"><i class="fas fa-robot"></i></span>
+                        </div>
+                        <h3>Codename : attaque et défense d'agents LLM</h3>
+                        <ul class="bullets">
+                            <li>Kit de prompt injection pour faire révéler son mot de code secret à un agent.</li>
+                            <li>Agent Ollama durci pour résister aux mêmes attaques, avec banc de test automatisé.</li>
+                        </ul>
+                        <div class="tags"><span>Ollama</span><span>Python</span><span>Prompt engineering</span></div>
+                        <a class="repo-link" href="https://github.com/charly-2025/Codename-Epitech" target="_blank" rel="noopener"><i class="fab fa-github"></i> Voir le repo <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    </article>
+                    <article class="card xp-card">
+                        <div class="card-head">
+                            <span class="badge">Projet de fin d'année</span>
+                            <span class="card-icon"><i class="fas fa-briefcase"></i></span>
+                        </div>
+                        <h3>Job Aggregator</h3>
+                        <ul class="bullets">
+                            <li>Plateforme qui agrège des offres d'emploi et de stage et normalise les données.</li>
+                            <li>API Node.js documentée (Swagger), moteur de recommandation, frontend React.</li>
+                            <li>Docker, CI GitHub Actions, maquettes Figma.</li>
+                        </ul>
+                        <div class="tags"><span>React</span><span>Node.js</span><span>MySQL</span><span>Python</span><span>Docker</span></div>
+                        <a class="repo-link" href="https://github.com/charly-2025/Job-Aggregator-Epitech" target="_blank" rel="noopener"><i class="fab fa-github"></i> Voir le repo <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    </article>
+                    <article class="card xp-card">
+                        <div class="card-head">
+                            <span class="badge">Product Design</span>
+                            <span class="card-icon"><i class="fas fa-ghost"></i></span>
+                        </div>
+                        <h3>Poltergeist : réseau social anonyme</h3>
+                        <ul class="bullets">
+                            <li>Réseau social de niche 100 % anonyme, avec des fils de discussion par ville.</li>
+                            <li>Démarche produit complète (besoins, priorisation, Figma) jusqu'au MVP.</li>
+                        </ul>
+                        <div class="tags"><span>React</span><span>Node.js</span><span>MongoDB</span><span>Docker</span><span>Figma</span></div>
+                        <a class="repo-link" href="https://github.com/charly-2025/Poltergeist-Epitech" target="_blank" rel="noopener"><i class="fab fa-github"></i> Voir le repo <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    </article>
+                    <article class="card xp-card">
+                        <div class="card-head">
+                            <span class="badge">Full-stack</span>
+                            <span class="card-icon"><i class="fas fa-list-check"></i></span>
+                        </div>
+                        <h3>E-Todo</h3>
+                        <ul class="bullets">
+                            <li>Application web de gestion de tâches avec vue calendrier.</li>
+                            <li>API Node.js / Express, base MySQL et interface React, lancées avec Docker Compose.</li>
+                        </ul>
+                        <div class="tags"><span>React</span><span>Node.js</span><span>Express</span><span>MySQL</span><span>Docker</span></div>
+                        <a class="repo-link" href="https://github.com/charly-2025/E-Todo-Epitech" target="_blank" rel="noopener"><i class="fab fa-github"></i> Voir le repo <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    </article>
+                    <article class="card xp-card">
+                        <div class="card-head">
+                            <span class="badge">Data · Machine learning</span>
+                            <span class="card-icon"><i class="fas fa-train"></i></span>
+                        </div>
+                        <h3>Tardis : prédiction des retards SNCF</h3>
+                        <ul class="bullets">
+                            <li>Nettoyage et analyse exploratoire de l'historique des retards de trains.</li>
+                            <li>Modèle prédictif et dashboard interactif Streamlit.</li>
+                        </ul>
+                        <div class="tags"><span>pandas</span><span>scikit-learn</span><span>Streamlit</span></div>
+                        <a class="repo-link" href="https://github.com/charly-2025/Tardis-Epitech" target="_blank" rel="noopener"><i class="fab fa-github"></i> Voir le repo <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    </article>
+                    <article class="card xp-card">
+                        <div class="card-head">
+                            <span class="badge">Data</span>
+                            <span class="card-icon"><i class="fas fa-basket-shopping"></i></span>
+                        </div>
+                        <h3>NextBuy : analyse de commandes</h3>
+                        <ul class="bullets">
+                            <li>Analyse de millions de commandes d'une épicerie en ligne.</li>
+                            <li>Produits phares, heures de pointe, réachat et profil de chaque client.</li>
+                        </ul>
+                        <div class="tags"><span>pandas</span><span>Jupyter</span><span>Matplotlib</span></div>
+                        <a class="repo-link" href="https://github.com/charly-2025/NextBuy-Epitech" target="_blank" rel="noopener"><i class="fab fa-github"></i> Voir le repo <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    </article>
+                    <article class="card xp-card">
+                        <div class="card-head">
+                            <span class="badge">IA · Chatbot</span>
+                            <span class="card-icon"><i class="fas fa-pizza-slice"></i></span>
+                        </div>
+                        <h3>PizzaTech : chatbot pour pizzerias</h3>
+                        <ul class="bullets">
+                            <li>Chatbot console et Discord : suivi de commande et temps de livraison restant.</li>
+                            <li>Analyse business du besoin et landing page de présentation.</li>
+                        </ul>
+                        <div class="tags"><span>Python</span><span>Discord</span><span>MySQL</span><span>GraphHopper</span></div>
+                        <a class="repo-link" href="https://github.com/charly-2025/Eliza-Epitech" target="_blank" rel="noopener"><i class="fab fa-github"></i> Voir le repo <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    </article>
+                    <article class="card xp-card">
+                        <div class="card-head">
+                            <span class="badge">IA · NLP</span>
+                            <span class="card-icon"><i class="fas fa-book-open"></i></span>
+                        </div>
+                        <h3>Alice in Wonderland : moteur NLP</h3>
+                        <ul class="bullets">
+                            <li>Outil en ligne de commande qui transforme des livres du Projet Gutenberg en fiches de synthèse.</li>
+                            <li>Mise en cache des traitements coûteux.</li>
+                        </ul>
+                        <div class="tags"><span>Python</span><span>NLP</span><span>CLI</span></div>
+                        <a class="repo-link" href="https://github.com/charly-2025/Alice-In-Wonderland-Epitech" target="_blank" rel="noopener"><i class="fab fa-github"></i> Voir le repo <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    </article>
+                    <article class="card xp-card">
+                        <div class="card-head">
+                            <span class="badge">Hackathon · The Shifters</span>
+                            <span class="card-icon"><i class="fas fa-leaf"></i></span>
+                        </div>
+                        <h3>Impact carbone des villes</h3>
+                        <ul class="bullets">
+                            <li>Application web pour rechercher une ville et consulter son score environnemental.</li>
+                            <li>Objectif : donner à l'association un support concret pour convaincre les collectivités.</li>
+                        </ul>
+                        <div class="tags"><span>Python</span><span>FastAPI</span><span>JavaScript</span><span>Open data</span></div>
+                        <a class="repo-link" href="https://github.com/charly-2025/The-Shifters-Hackathon-Epitech" target="_blank" rel="noopener"><i class="fab fa-github"></i> Voir le repo <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ HOMELAB ============ -->
+        <section id="homelab" class="scene scene-lab">
+            <div class="scene-art">
+                <svg id="lab-svg" viewBox="0 0 640 400" role="img" aria-label="Illustration d'un homelab : mini PC, NAS et Raspberry Pi reliés à un switch">
+                    <defs>
+                        <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0" stop-color="#3a4256"/>
+                            <stop offset="1" stop-color="#232938"/>
+                        </linearGradient>
+                        <linearGradient id="pcb" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0" stop-color="#2f9e63"/>
+                            <stop offset="1" stop-color="#1d6e43"/>
+                        </linearGradient>
+                    </defs>
+
+                    <!-- câbles -->
+                    <g fill="none" stroke-width="4" stroke-linecap="round">
+                        <path id="cable-1" class="cable" d="M130 250 C130 160, 270 150, 285 96" stroke="#4cc9f0"/>
+                        <path id="cable-2" class="cable" d="M320 170 L320 96" stroke="#7b61ff"/>
+                        <path id="cable-3" class="cable" d="M520 230 C520 150, 370 150, 355 96" stroke="#3ddc97"/>
+                    </g>
+                    <g class="packets">
+                        <circle r="5" fill="#bdefff"><animateMotion dur="2.2s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#cable-1"/></animateMotion></circle>
+                        <circle r="5" fill="#d5ccff"><animateMotion dur="1.4s" repeatCount="indefinite"><mpath href="#cable-2"/></animateMotion></circle>
+                        <circle r="5" fill="#c7f6e0"><animateMotion dur="2.6s" begin="0.6s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#cable-3"/></animateMotion></circle>
+                    </g>
+
+                    <!-- switch -->
+                    <g id="lab-switch">
+                        <rect x="250" y="60" width="140" height="36" rx="6" fill="url(#metal)" stroke="#4a546d"/>
+                        <g fill="#0b0f19">
+                            <rect x="262" y="72" width="14" height="12" rx="1"/>
+                            <rect x="282" y="72" width="14" height="12" rx="1"/>
+                            <rect x="302" y="72" width="14" height="12" rx="1"/>
+                            <rect x="322" y="72" width="14" height="12" rx="1"/>
+                            <rect x="342" y="72" width="14" height="12" rx="1"/>
+                        </g>
+                        <g class="blink">
+                            <circle cx="372" cy="72" r="3" fill="#3ddc97"/>
+                            <circle cx="380" cy="72" r="3" fill="#ffd36b"/>
+                        </g>
+                        <text x="320" y="52" text-anchor="middle" class="svg-label">SWITCH</text>
+                    </g>
+
+                    <!-- bureau -->
+                    <rect x="20" y="330" width="600" height="14" rx="4" fill="#2b3346"/>
+                    <rect x="40" y="344" width="10" height="50" fill="#20263a"/>
+                    <rect x="590" y="344" width="10" height="50" fill="#20263a"/>
+
+                    <!-- mini PC -->
+                    <g id="lab-minipc">
+                        <rect x="62" y="250" width="136" height="80" rx="12" fill="url(#metal)" stroke="#4a546d"/>
+                        <rect x="62" y="250" width="136" height="10" rx="5" fill="#4a546d"/>
+                        <g stroke="#1a1f2c" stroke-width="2">
+                            <line x1="90" y1="255" x2="170" y2="255"/>
+                        </g>
+                        <circle cx="84" cy="300" r="8" fill="none" stroke="#9aa4bd" stroke-width="2"/>
+                        <line x1="84" y1="294" x2="84" y2="300" stroke="#9aa4bd" stroke-width="2"/>
+                        <circle cx="104" cy="300" r="3" fill="#4cc9f0" class="blink"/>
+                        <rect x="140" y="292" width="20" height="8" rx="1" fill="#0b0f19"/>
+                        <rect x="166" y="292" width="20" height="8" rx="1" fill="#0b0f19"/>
+                        <rect x="140" y="306" width="10" height="6" rx="1" fill="#0b0f19"/>
+                        <text x="130" y="370" text-anchor="middle" class="svg-label">MINI PC</text>
+                    </g>
+
+                    <!-- NAS -->
+                    <g id="lab-nas">
+                        <rect x="252" y="170" width="136" height="160" rx="12" fill="url(#metal)" stroke="#4a546d"/>
+                        <g>
+                            <rect x="266" y="186" width="108" height="26" rx="4" fill="#1a1f2c"/>
+                            <rect x="266" y="218" width="108" height="26" rx="4" fill="#1a1f2c"/>
+                            <rect x="266" y="250" width="108" height="26" rx="4" fill="#1a1f2c"/>
+                            <rect x="266" y="282" width="108" height="26" rx="4" fill="#1a1f2c"/>
+                        </g>
+                        <g fill="#2d3548">
+                            <rect x="274" y="196" width="60" height="6" rx="3"/>
+                            <rect x="274" y="228" width="60" height="6" rx="3"/>
+                            <rect x="274" y="260" width="60" height="6" rx="3"/>
+                            <rect x="274" y="292" width="60" height="6" rx="3"/>
+                        </g>
+                        <circle cx="362" cy="199" r="3.5" fill="#3ddc97" class="blink b1"/>
+                        <circle cx="362" cy="231" r="3.5" fill="#3ddc97" class="blink b2"/>
+                        <circle cx="362" cy="263" r="3.5" fill="#3ddc97" class="blink b3"/>
+                        <circle cx="362" cy="295" r="3.5" fill="#3ddc97" class="blink b4"/>
+                        <text x="320" y="370" text-anchor="middle" class="svg-label">NAS</text>
+                    </g>
+
+                    <!-- Raspberry Pi -->
+                    <g id="lab-rpi">
+                        <rect x="452" y="318" width="10" height="12" fill="#2b3346"/>
+                        <rect x="578" y="318" width="10" height="12" fill="#2b3346"/>
+                        <rect x="440" y="230" width="160" height="92" rx="8" fill="url(#pcb)" stroke="#155a36"/>
+                        <g fill="#e2c26b">
+                            <circle cx="450" cy="240" r="3.5"/><circle cx="590" cy="240" r="3.5"/>
+                            <circle cx="450" cy="312" r="3.5"/><circle cx="590" cy="312" r="3.5"/>
+                        </g>
+                        <g fill="#d9b44a">
+                            <rect x="462" y="236" width="5" height="5"/><rect x="470" y="236" width="5" height="5"/><rect x="478" y="236" width="5" height="5"/><rect x="486" y="236" width="5" height="5"/><rect x="494" y="236" width="5" height="5"/><rect x="502" y="236" width="5" height="5"/><rect x="510" y="236" width="5" height="5"/><rect x="518" y="236" width="5" height="5"/><rect x="526" y="236" width="5" height="5"/><rect x="534" y="236" width="5" height="5"/><rect x="542" y="236" width="5" height="5"/><rect x="550" y="236" width="5" height="5"/>
+                            <rect x="462" y="244" width="5" height="5"/><rect x="470" y="244" width="5" height="5"/><rect x="478" y="244" width="5" height="5"/><rect x="486" y="244" width="5" height="5"/><rect x="494" y="244" width="5" height="5"/><rect x="502" y="244" width="5" height="5"/><rect x="510" y="244" width="5" height="5"/><rect x="518" y="244" width="5" height="5"/><rect x="526" y="244" width="5" height="5"/><rect x="534" y="244" width="5" height="5"/><rect x="542" y="244" width="5" height="5"/><rect x="550" y="244" width="5" height="5"/>
+                        </g>
+                        <rect x="478" y="264" width="38" height="38" rx="3" fill="#c3c9d6"/>
+                        <rect x="484" y="270" width="26" height="26" rx="2" fill="#9aa2b3"/>
+                        <rect x="526" y="268" width="26" height="18" rx="2" fill="#151a24"/>
+                        <rect x="574" y="256" width="30" height="20" rx="2" fill="#c3c9d6"/>
+                        <rect x="574" y="282" width="30" height="20" rx="2" fill="#c3c9d6"/>
+                        <rect x="574" y="304" width="30" height="14" rx="2" fill="#aab1bf"/>
+                        <g transform="translate(540 300)">
+                            <circle cx="0" cy="0" r="4" fill="#d6336c"/><circle cx="6" cy="0" r="4" fill="#d6336c"/><circle cx="3" cy="5" r="4" fill="#c2255c"/><circle cx="3" cy="-5" r="3" fill="#3ddc97"/>
+                        </g>
+                        <circle cx="462" cy="300" r="3" fill="#ff5d5d" class="blink b2"/>
+                        <text x="520" y="370" text-anchor="middle" class="svg-label">RASPBERRY PI</text>
+                    </g>
+                </svg>
+            </div>
+
+            <div class="scene-text">
+                <p class="eyebrow">05 · Projets perso</p>
+                <h2 class="section-title">Mon homelab</h2>
+                <p class="lead">Une petite infrastructure à la maison pour expérimenter, héberger mes services et pratiquer l'administration système et la sécurité en conditions réelles.</p>
+                <div class="card lab-card">
+                    <span class="card-icon"><i class="fas fa-microchip"></i></span>
+                    <div>
+                        <h3>Mini PC</h3>
+                        <p>Serveur principal : conteneurs Docker et services auto-hébergés pour tester mes déploiements.</p>
+                    </div>
+                </div>
+                <div class="card lab-card">
+                    <span class="card-icon"><i class="fas fa-hard-drive"></i></span>
+                    <div>
+                        <h3>NAS</h3>
+                        <p>Stockage centralisé, sauvegardes et partage de fichiers sur le réseau local.</p>
+                    </div>
+                </div>
+                <div class="card lab-card">
+                    <span class="card-icon"><i class="fab fa-raspberry-pi"></i></span>
+                    <div>
+                        <h3>Raspberry Pi</h3>
+                        <p>Nextcloud, Vaultwarden, Portainer et un panneau de contrôle maison (Wake-on-LAN, monitoring), accessibles uniquement via Tailscale.</p>
+                        <a class="repo-link" href="https://github.com/charly-2025/Homelab-RSP" target="_blank" rel="noopener"><i class="fab fa-github"></i> Homelab RSP <i class="fas fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ PROJETS PERSO GITHUB ============ -->
+        <section id="perso" class="section perso">
+            <div class="container">
+                <p class="eyebrow reveal">06 · Projets personnels</p>
+                <h2 class="section-title reveal">En dehors des <span class="grad">cours</span></h2>
+                <div class="perso-grid">
+                    <article class="card perso-card reveal">
+                        <div class="card-head">
+                            <span class="badge badge-accent">En ligne</span>
+                            <span class="card-icon"><i class="fas fa-ghost"></i></span>
+                        </div>
+                        <h3>Poltergeist</h3>
+                        <p>La suite du projet d'école devenue un vrai produit : réseau social anonyme et local, application Android, modération, notifications push et pipeline CI / CD complet.</p>
+                        <div class="tags"><span>React</span><span>Node.js</span><span>PostgreSQL</span><span>Prisma</span><span>Docker</span><span>Capacitor</span></div>
+                        <div class="perso-links">
+                            <a class="repo-link" href="https://github.com/charly-2025/poltergeist" target="_blank" rel="noopener"><i class="fab fa-github"></i> Repo <i class="fas fa-arrow-up-right-from-square"></i></a>
+                            <a class="repo-link" href="https://poltergeist.ch" target="_blank" rel="noopener"><i class="fas fa-globe"></i> poltergeist.ch <i class="fas fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </article>
+                    <article class="card perso-card reveal">
+                        <div class="card-head">
+                            <span class="badge">Domotique</span>
+                            <span class="card-icon"><i class="fas fa-house-signal"></i></span>
+                        </div>
+                        <h3>Home Control</h3>
+                        <p>Plateforme de maison connectée 100 % locale : pilotage d'appareils Zigbee depuis un dashboard web ou à la voix, avec un assistant vocal basé sur un LLM local.</p>
+                        <div class="tags"><span>FastAPI</span><span>React</span><span>MQTT</span><span>Zigbee2MQTT</span><span>Home Assistant</span><span>Ollama</span></div>
+                        <div class="perso-links">
+                            <a class="repo-link" href="https://github.com/charly-2025/Home-Control" target="_blank" rel="noopener"><i class="fab fa-github"></i> Repo <i class="fas fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </article>
+                    <article class="card perso-card reveal">
+                        <div class="card-head">
+                            <span class="badge">Auto-hébergement</span>
+                            <span class="card-icon"><i class="fab fa-raspberry-pi"></i></span>
+                        </div>
+                        <h3>Homelab RSP</h3>
+                        <p>Mon homelab sur Raspberry Pi : cloud perso, gestionnaire de mots de passe et panneau de contrôle pour allumer et surveiller mon PC à distance, le tout privé via Tailscale.</p>
+                        <div class="tags"><span>Docker Compose</span><span>nginx</span><span>Flask</span><span>React</span><span>Tailscale</span></div>
+                        <div class="perso-links">
+                            <a class="repo-link" href="https://github.com/charly-2025/Homelab-RSP" target="_blank" rel="noopener"><i class="fab fa-github"></i> Repo <i class="fas fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ COMPÉTENCES ============ -->
+        <section id="skills" class="scene scene-skills">
+            <div class="coins" aria-hidden="true">
+                <div class="coin" style="--x:6%;--y:14%;--s:1.1;--d:1.4"><div class="coin-spin" style="--t:7s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/python/python-original.svg" alt=""></div></div>
+                <div class="coin" style="--x:22%;--y:70%;--s:.8;--d:.7"><div class="coin-spin" style="--t:9s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/react/react-original.svg" alt=""></div></div>
+                <div class="coin" style="--x:84%;--y:12%;--s:1;--d:1.1"><div class="coin-spin" style="--t:8s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/docker/docker-original.svg" alt=""></div></div>
+                <div class="coin" style="--x:90%;--y:62%;--s:1.25;--d:1.6"><div class="coin-spin" style="--t:10s"><span class="mask" style="--icon:url(https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/burpsuite.svg);--c:#ff6633"></span></div></div>
+                <div class="coin" style="--x:3%;--y:52%;--s:.75;--d:.6"><div class="coin-spin" style="--t:6.5s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/nodejs/nodejs-original.svg" alt=""></div></div>
+                <div class="coin" style="--x:72%;--y:84%;--s:.85;--d:.9"><div class="coin-spin" style="--t:7.5s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/github/github-original.svg" alt=""></div></div>
+                <div class="coin" style="--x:40%;--y:6%;--s:.7;--d:.5"><div class="coin-spin" style="--t:8.5s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/mysql/mysql-original.svg" alt=""></div></div>
+                <div class="coin" style="--x:62%;--y:4%;--s:.8;--d:.8"><div class="coin-spin" style="--t:9.5s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/figma/figma-original.svg" alt=""></div></div>
+                <div class="coin" style="--x:12%;--y:88%;--s:1;--d:1.2"><div class="coin-spin" style="--t:7.2s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/java/java-original.svg" alt=""></div></div>
+                <div class="coin" style="--x:44%;--y:88%;--s:.7;--d:.55"><div class="coin-spin" style="--t:8.2s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/vscode/vscode-original.svg" alt=""></div></div>
+                <div class="coin" style="--x:78%;--y:38%;--s:.65;--d:.45"><div class="coin-spin" style="--t:6.8s"><span class="mask" style="--icon:url(https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/ollama.svg);--c:#111"></span></div></div>
+                <div class="coin" style="--x:16%;--y:32%;--s:.65;--d:.5"><div class="coin-spin" style="--t:9.2s"><span class="mono-logo">EXG</span></div></div>
+                <div class="coin" style="--x:30%;--y:46%;--s:.6;--d:.4"><div class="coin-spin" style="--t:8.8s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/mongodb/mongodb-original.svg" alt=""></div></div>
+                <div class="coin" style="--x:56%;--y:92%;--s:.75;--d:.7"><div class="coin-spin" style="--t:7.8s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/linux/linux-original.svg" alt=""></div></div>
+                <div class="coin" style="--x:94%;--y:86%;--s:.7;--d:.6"><div class="coin-spin" style="--t:9.6s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/pandas/pandas-original.svg" alt=""></div></div>
+                <div class="coin" style="--x:28%;--y:4%;--s:.75;--d:.75"><div class="coin-spin" style="--t:6.6s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/javascript/javascript-original.svg" alt=""></div></div>
+                <div class="coin" style="--x:2%;--y:30%;--s:.7;--d:.55"><div class="coin-spin" style="--t:8.4s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/postgresql/postgresql-original.svg" alt=""></div></div>
+                <div class="coin" style="--x:8%;--y:72%;--s:.6;--d:.45"><div class="coin-spin" style="--t:7.1s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/flask/flask-original.svg" alt=""></div></div>
+                <div class="coin" style="--x:36%;--y:96%;--s:.6;--d:.5"><div class="coin-spin" style="--t:9.1s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/fastapi/fastapi-original.svg" alt=""></div></div>
+                <div class="coin" style="--x:66%;--y:14%;--s:.6;--d:.45"><div class="coin-spin" style="--t:6.9s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/nginx/nginx-original.svg" alt=""></div></div>
+                <div class="coin" style="--x:86%;--y:28%;--s:.75;--d:.7"><div class="coin-spin" style="--t:8.6s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/raspberrypi/raspberrypi-original.svg" alt=""></div></div>
+                <div class="coin" style="--x:50%;--y:2%;--s:.55;--d:.4"><div class="coin-spin" style="--t:7.4s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/vitejs/vitejs-original.svg" alt=""></div></div>
+                <div class="coin" style="--x:20%;--y:94%;--s:.6;--d:.5"><div class="coin-spin" style="--t:9.4s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/jupyter/jupyter-original.svg" alt=""></div></div>
+                <div class="coin" style="--x:97%;--y:48%;--s:.55;--d:.4"><div class="coin-spin" style="--t:6.7s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/numpy/numpy-original.svg" alt=""></div></div>
+                <div class="coin" style="--x:74%;--y:70%;--s:.6;--d:.5"><div class="coin-spin" style="--t:8.1s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/githubactions/githubactions-original.svg" alt=""></div></div>
+                <div class="coin" style="--x:60%;--y:96%;--s:.55;--d:.45"><div class="coin-spin" style="--t:7.7s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/cloudflare/cloudflare-original.svg" alt=""></div></div>
+                <div class="coin" style="--x:24%;--y:20%;--s:.55;--d:.4"><div class="coin-spin" style="--t:9.8s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/prisma/prisma-original.svg" alt=""></div></div>
+                <div class="coin" style="--x:4%;--y:92%;--s:.75;--d:.7"><div class="coin-spin" style="--t:8.3s"><span class="mask" style="--icon:url(https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/homeassistant.svg);--c:#41BDF5"></span></div></div>
+                <div class="coin" style="--x:82%;--y:96%;--s:.55;--d:.45"><div class="coin-spin" style="--t:7.3s"><span class="mask" style="--icon:url(https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/mqtt.svg);--c:#660066"></span></div></div>
+                <div class="coin" style="--x:92%;--y:4%;--s:.6;--d:.5"><div class="coin-spin" style="--t:9.3s"><span class="mask" style="--icon:url(https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/tailscale.svg);--c:#242424"></span></div></div>
+                <div class="coin" style="--x:12%;--y:4%;--s:.55;--d:.4"><div class="coin-spin" style="--t:6.4s"><span class="mask" style="--icon:url(https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/streamlit.svg);--c:#FF4B4B"></span></div></div>
+                <div class="coin" style="--x:70%;--y:50%;--s:.5;--d:.35"><div class="coin-spin" style="--t:8.9s"><span class="mask" style="--icon:url(https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/scikitlearn.svg);--c:#F7931E"></span></div></div>
+            </div>
+
+            <div class="skills-panel">
+                <p class="eyebrow">07 · Compétences</p>
+                <h2 class="section-title">Ma boîte <span class="grad">à outils</span></h2>
+
+                <h3 class="panel-h">Hard skills</h3>
+                <div class="skill-cats">
+                    <div class="skill-cat">
+                        <h4><i class="fas fa-shield-halved"></i> Cybersécurité</h4>
+                        <ul class="chips chips-sm"><li>Pentest web</li><li>OWASP Top 10</li><li>Injection SQL / XSS</li><li>Burp Suite</li><li>SQLMap</li><li>Exegol</li><li>nmap</li><li>ffuf</li><li>John the Ripper</li><li>Cracking &amp; reverse</li><li>CTF / writeups</li></ul>
+                    </div>
+                    <div class="skill-cat">
+                        <h4><i class="fas fa-code"></i> Langages</h4>
+                        <ul class="chips chips-sm"><li>Python</li><li>JavaScript</li><li>Java</li><li>SQL</li><li>HTML / CSS</li><li>Bash</li></ul>
+                    </div>
+                    <div class="skill-cat">
+                        <h4><i class="fas fa-layer-group"></i> Web full-stack</h4>
+                        <ul class="chips chips-sm"><li>React</li><li>Vite</li><li>Node.js</li><li>Express</li><li>Flask</li><li>FastAPI</li><li>API REST</li><li>WebSocket</li><li>Swagger</li><li>JWT / auth</li></ul>
+                    </div>
+                    <div class="skill-cat">
+                        <h4><i class="fas fa-chart-column"></i> Data &amp; BI</h4>
+                        <ul class="chips chips-sm"><li>pandas</li><li>NumPy</li><li>Jupyter</li><li>Matplotlib / Seaborn</li><li>scikit-learn</li><li>Streamlit</li><li>QlikSense</li><li>Pipeline ETL</li></ul>
+                    </div>
+                    <div class="skill-cat">
+                        <h4><i class="fas fa-brain"></i> IA &amp; LLM</h4>
+                        <ul class="chips chips-sm"><li>NLP</li><li>Chatbots</li><li>Ollama</li><li>Whisper / Piper</li><li>Prompt engineering</li><li>Sécurité des LLM</li></ul>
+                    </div>
+                    <div class="skill-cat">
+                        <h4><i class="fas fa-database"></i> Bases de données</h4>
+                        <ul class="chips chips-sm"><li>MySQL</li><li>PostgreSQL</li><li>MongoDB</li><li>Prisma</li><li>Modélisation de schémas</li></ul>
+                    </div>
+                    <div class="skill-cat">
+                        <h4><i class="fas fa-server"></i> DevOps &amp; réseau</h4>
+                        <ul class="chips chips-sm"><li>Docker / Compose</li><li>nginx</li><li>Linux</li><li>GitHub Actions</li><li>CI / CD</li><li>Tailscale</li><li>Cloudflare Tunnel</li></ul>
+                    </div>
+                    <div class="skill-cat">
+                        <h4><i class="fas fa-house-signal"></i> IoT &amp; auto-hébergement</h4>
+                        <ul class="chips chips-sm"><li>Raspberry Pi</li><li>Home Assistant</li><li>MQTT</li><li>Zigbee2MQTT</li><li>Nextcloud</li><li>Vaultwarden</li><li>Wake-on-LAN</li></ul>
+                    </div>
+                    <div class="skill-cat">
+                        <h4><i class="fas fa-compass-drafting"></i> Produit &amp; outils</h4>
+                        <ul class="chips chips-sm"><li>Figma</li><li>Product design</li><li>MVP</li><li>Git / GitHub</li><li>ESLint / Prettier</li><li>Postman</li><li>Capacitor (Android)</li></ul>
+                    </div>
+                </div>
+
+                <div class="panel-cols">
+                    <div>
+                        <h3 class="panel-h">Soft skills</h3>
+                        <ul class="chips chips-soft">
+                            <li class="chip">Polyvalent</li>
+                            <li class="chip">Coopératif</li>
+                            <li class="chip">Assidu</li>
+                            <li class="chip">Responsable</li>
+                            <li class="chip">Autonome</li>
+                            <li class="chip">À l'écoute</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="panel-h">Langues</h3>
+                        <div class="lang">
+                            <div class="lang-row"><span>Français</span><span>Natif</span></div>
+                            <div class="lang-bar"><span style="--w:100%"></span></div>
+                            <div class="lang-row"><span>Anglais</span><span>B1+</span></div>
+                            <div class="lang-bar"><span style="--w:58%"></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ EXPÉRIENCES HORS IT ============ -->
+        <section id="offit" class="scene scene-offit">
+            <div class="scene-art">
+                <svg id="offit-svg" viewBox="0 0 800 420" role="img" aria-label="Illustration : un serveur portant une cloche de service et un surveillant d'internat avec une lampe torche">
+                    <defs>
+                        <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0" stop-color="#f3f5f9"/>
+                            <stop offset=".55" stop-color="#b9c0cc"/>
+                            <stop offset="1" stop-color="#7f8898"/>
+                        </linearGradient>
+                        <radialGradient id="lampGlow" cx=".5" cy=".5" r=".5">
+                            <stop offset="0" stop-color="#ffcf7a" stop-opacity=".55"/>
+                            <stop offset="1" stop-color="#ffcf7a" stop-opacity="0"/>
+                        </radialGradient>
+                        <linearGradient id="beamGrad" x1="0" y1="0" x2="1" y2="0">
+                            <stop offset="0" stop-color="#fff3c4" stop-opacity=".75"/>
+                            <stop offset="1" stop-color="#fff3c4" stop-opacity="0"/>
+                        </linearGradient>
+                        <clipPath id="clipRight"><rect x="400" y="0" width="400" height="420"/></clipPath>
+                    </defs>
+
+                    <!-- Restaurant -->
+                    <g id="resto">
+                        <rect x="0" y="0" width="400" height="420" fill="#1d1714"/>
+                        <rect x="0" y="300" width="400" height="100" fill="#271e19"/>
+                        <line x1="0" y1="300" x2="400" y2="300" stroke="#3a2c24" stroke-width="3"/>
+                        <rect x="0" y="400" width="400" height="20" fill="#2f241e"/>
+                        <g class="lamp">
+                            <line x1="70" y1="0" x2="70" y2="58" stroke="#5a4636" stroke-width="2"/>
+                            <circle cx="70" cy="82" r="70" fill="url(#lampGlow)"/>
+                            <path d="M52 58 L88 58 L98 78 L42 78 Z" fill="#c9883d"/>
+                        </g>
+                        <g class="lamp">
+                            <line x1="330" y1="0" x2="330" y2="58" stroke="#5a4636" stroke-width="2"/>
+                            <circle cx="330" cy="82" r="70" fill="url(#lampGlow)"/>
+                            <path d="M312 58 L348 58 L358 78 L302 78 Z" fill="#c9883d"/>
+                        </g>
+                        <g>
+                            <rect x="30" y="120" width="96" height="110" rx="4" fill="#5a4636"/>
+                            <rect x="36" y="126" width="84" height="98" rx="2" fill="#1f2a26"/>
+                            <text x="78" y="148" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="14" font-weight="700" fill="#e8ecf4">MENU</text>
+                            <g stroke="#e8ecf4" stroke-opacity=".5" stroke-width="2" stroke-linecap="round">
+                                <line x1="46" y1="164" x2="96" y2="164"/><line x1="102" y1="164" x2="110" y2="164"/>
+                                <line x1="46" y1="180" x2="88" y2="180"/><line x1="102" y1="180" x2="110" y2="180"/>
+                                <line x1="46" y1="196" x2="92" y2="196"/><line x1="102" y1="196" x2="110" y2="196"/>
+                            </g>
+                        </g>
+                        <g>
+                            <rect x="296" y="300" width="90" height="10" rx="2" fill="#f0ece4"/>
+                            <path d="M296 310 L386 310 L380 340 L302 340 Z" fill="#e2ddd2"/>
+                            <rect x="336" y="340" width="10" height="60" fill="#3a2c24"/>
+                            <path d="M318 280 Q318 296 324 296 Q330 296 330 280 Z" fill="#9b2335" opacity=".85"/>
+                            <line x1="324" y1="296" x2="324" y2="300" stroke="#c9cfdc" stroke-width="2"/>
+                        </g>
+                    </g>
+
+                    <!-- Internat -->
+                    <g id="internat">
+                        <rect x="400" y="0" width="400" height="420" fill="#0e1426"/>
+                        <rect x="400" y="400" width="400" height="20" fill="#151c33"/>
+                        <line x1="400" y1="400" x2="800" y2="400" stroke="#243052" stroke-width="3"/>
+                        <g>
+                            <rect x="520" y="28" width="150" height="82" rx="4" fill="#1d2747"/>
+                            <rect x="526" y="34" width="138" height="70" rx="2" fill="#070b18"/>
+                            <circle cx="636" cy="62" r="16" fill="#f4f1de"/>
+                            <circle cx="644" cy="56" r="14" fill="#070b18"/>
+                            <g fill="#ffffff"><circle cx="548" cy="50" r="1.3"/><circle cx="572" cy="80" r="1"/><circle cx="600" cy="46" r="1.2"/><circle cx="610" cy="90" r="1"/><circle cx="560" cy="94" r="1"/></g>
+                            <line x1="595" y1="34" x2="595" y2="104" stroke="#1d2747" stroke-width="4"/>
+                        </g>
+                        <g>
+                            <rect x="420" y="226" width="78" height="174" rx="3" fill="#1d2747"/>
+                            <rect x="426" y="232" width="66" height="168" rx="2" fill="#2a365e"/>
+                            <rect x="446" y="250" width="26" height="14" rx="2" fill="#0e1426"/>
+                            <text x="459" y="261" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#9fb0dc">12</text>
+                            <circle cx="482" cy="320" r="3.5" fill="#9fb0dc"/>
+                            <rect x="426" y="396" width="66" height="4" fill="#ffd36b" opacity=".35"/>
+                        </g>
+                        <g>
+                            <rect x="706" y="226" width="78" height="174" rx="3" fill="#1d2747"/>
+                            <rect x="712" y="232" width="66" height="168" rx="2" fill="#2a365e"/>
+                            <rect x="732" y="250" width="26" height="14" rx="2" fill="#0e1426"/>
+                            <text x="745" y="261" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#9fb0dc">13</text>
+                            <circle cx="718" cy="320" r="3.5" fill="#9fb0dc"/>
+                        </g>
+                        <g class="zzz" font-family="Space Grotesk, sans-serif" font-weight="700" fill="#9fb0dc">
+                            <text x="470" y="214" font-size="16">z</text>
+                            <text x="482" y="198" font-size="20">z</text>
+                            <text x="498" y="178" font-size="26">Z</text>
+                        </g>
+                        <g class="zzz zzz-2" font-family="Space Grotesk, sans-serif" font-weight="700" fill="#9fb0dc">
+                            <text x="742" y="214" font-size="16">z</text>
+                            <text x="754" y="198" font-size="20">z</text>
+                            <text x="768" y="178" font-size="26">Z</text>
+                        </g>
+                    </g>
+
+                    <line x1="400" y1="0" x2="400" y2="420" stroke="#07090f" stroke-width="4"/>
+
+                    <!-- Serveur -->
+                    <g id="waiter">
+                        <g id="waiter-inner">
+                        <ellipse cx="200" cy="402" rx="55" ry="7" fill="#000" opacity=".35"/>
+                        <rect x="178" y="300" width="18" height="95" rx="6" fill="#1a1a22"/>
+                        <rect x="204" y="300" width="18" height="95" rx="6" fill="#1a1a22"/>
+                        <ellipse cx="185" cy="397" rx="15" ry="6" fill="#0c0c10"/>
+                        <ellipse cx="215" cy="397" rx="15" ry="6" fill="#0c0c10"/>
+                        <rect x="165" y="190" width="70" height="120" rx="18" fill="#f4f4f6"/>
+                        <path d="M165 208 Q165 190 182 190 L191 190 L200 226 L209 190 L218 190 Q235 190 235 208 L235 300 L165 300 Z" fill="#20222b"/>
+                        <rect x="167" y="268" width="66" height="84" rx="4" fill="#f0ece4"/>
+                        <rect x="193" y="176" width="14" height="16" fill="#e8b892"/>
+                        <polygon points="189,196 200,201 189,206" fill="#c0392b"/>
+                        <polygon points="211,196 200,201 211,206" fill="#c0392b"/>
+                        <circle cx="200" cy="201" r="2.5" fill="#962d22"/>
+                        <circle cx="200" cy="152" r="30" fill="#f0c4a0"/>
+                        <path d="M170 150 Q168 118 200 116 Q232 118 230 148 Q222 132 200 132 Q180 132 170 150 Z" fill="#3b2a20"/>
+                        <circle cx="190" cy="154" r="2.6" fill="#2a1d16"/>
+                        <circle cx="210" cy="154" r="2.6" fill="#2a1d16"/>
+                        <path d="M191 165 Q200 172 209 165" fill="none" stroke="#9a5a44" stroke-width="2.2" stroke-linecap="round"/>
+                        <path d="M170 202 Q140 226 148 262" fill="none" stroke="#f4f4f6" stroke-width="16" stroke-linecap="round"/>
+                        <path d="M230 202 Q260 226 252 262" fill="none" stroke="#f4f4f6" stroke-width="16" stroke-linecap="round"/>
+                        <ellipse cx="200" cy="262" rx="64" ry="7" fill="url(#silver)"/>
+                        <ellipse cx="200" cy="257" rx="40" ry="5" fill="#ffffff"/>
+                        <path d="M176 257 Q200 232 224 257 Z" fill="#d9843a"/>
+                        <circle cx="194" cy="240" r="3" fill="#3ddc97"/><circle cx="204" cy="238" r="3" fill="#2fb57d"/>
+                        <g class="steam" fill="none" stroke="#ffffff" stroke-opacity=".6" stroke-width="3" stroke-linecap="round">
+                            <path d="M188 230 Q182 218 188 206 Q194 194 188 182"/>
+                            <path d="M200 226 Q194 212 200 198 Q206 186 200 172"/>
+                            <path d="M212 230 Q206 218 212 206 Q218 194 212 182"/>
+                        </g>
+                        <g id="cloche-lid">
+                            <path d="M146 260 A54 46 0 0 1 254 260 Z" fill="url(#silver)"/>
+                            <path d="M166 236 Q178 222 196 218" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity=".8"/>
+                            <rect x="142" y="256" width="116" height="6" rx="3" fill="#a3abb9"/>
+                            <circle cx="200" cy="210" r="7" fill="url(#silver)"/>
+                        </g>
+                        <circle cx="149" cy="266" r="8" fill="#f0c4a0"/>
+                        <circle cx="251" cy="266" r="8" fill="#f0c4a0"/>
+                        </g>
+                    </g>
+
+                    <!-- Surveillant -->
+                    <g id="night-shade">
+                        <rect x="400" y="0" width="400" height="420" fill="#000" opacity=".55"/>
+                    </g>
+                    <g clip-path="url(#clipRight)">
+                        <g id="beam-move">
+                            <g id="torch-beam">
+                                <polygon points="700,244 820,170 820,340" fill="url(#beamGrad)"/>
+                            </g>
+                        </g>
+                    </g>
+                    <g id="warden">
+                        <g id="warden-inner">
+                        <ellipse cx="600" cy="402" rx="55" ry="7" fill="#000" opacity=".35"/>
+                        <g class="w-leg" data-hip="587 300">
+                            <rect x="578" y="300" width="18" height="95" rx="6" fill="#2d3d66"/>
+                            <ellipse cx="585" cy="397" rx="15" ry="6" fill="#dfe4ee"/>
+                        </g>
+                        <g class="w-leg" data-hip="613 300">
+                            <rect x="604" y="300" width="18" height="95" rx="6" fill="#2d3d66"/>
+                            <ellipse cx="615" cy="397" rx="15" ry="6" fill="#dfe4ee"/>
+                        </g>
+                        <rect x="563" y="190" width="74" height="120" rx="20" fill="#3a4a7a"/>
+                        <path d="M578 192 Q600 214 622 192" fill="none" stroke="#2c3961" stroke-width="8" stroke-linecap="round"/>
+                        <rect x="578" y="270" width="44" height="22" rx="6" fill="#33426e"/>
+                        <rect x="593" y="176" width="14" height="16" fill="#d9a67f"/>
+                        <path d="M585 194 L600 240 L615 194" fill="none" stroke="#4cc9f0" stroke-width="3"/>
+                        <rect x="591" y="238" width="18" height="24" rx="3" fill="#ffffff"/>
+                        <rect x="595" y="243" width="10" height="7" rx="1" fill="#4cc9f0"/>
+                        <rect x="595" y="253" width="10" height="2" fill="#9aa4bd"/>
+                        <circle cx="600" cy="152" r="30" fill="#e6b894"/>
+                        <path d="M571 146 Q572 120 600 118 Q628 120 629 146 Q626 136 612 132 Q596 138 584 132 Q574 136 571 146 Z" fill="#1f1b18"/>
+                        <circle cx="590" cy="154" r="2.6" fill="#1f1b18"/>
+                        <circle cx="610" cy="154" r="2.6" fill="#1f1b18"/>
+                        <path d="M592 167 L608 167" stroke="#8a5240" stroke-width="2.2" stroke-linecap="round"/>
+                        <path d="M567 205 Q545 240 560 268" fill="none" stroke="#3a4a7a" stroke-width="16" stroke-linecap="round"/>
+                        <rect x="536" y="246" width="36" height="46" rx="3" fill="#c49a6c"/>
+                        <rect x="541" y="254" width="26" height="34" rx="1" fill="#f4f4f6"/>
+                        <rect x="548" y="243" width="12" height="6" rx="1" fill="#7f8898"/>
+                        <g stroke="#9aa4bd" stroke-width="1.6"><line x1="545" y1="262" x2="563" y2="262"/><line x1="545" y1="269" x2="563" y2="269"/><line x1="545" y1="276" x2="558" y2="276"/></g>
+                        <circle cx="560" cy="270" r="8" fill="#e6b894"/>
+                        <path d="M633 205 Q660 228 672 248" fill="none" stroke="#3a4a7a" stroke-width="16" stroke-linecap="round"/>
+                        <rect x="670" y="240" width="32" height="13" rx="3" fill="#3b3f4a" transform="rotate(-8 672 246)"/>
+                        <rect x="698" y="237" width="6" height="18" rx="2" fill="#fff3c4" transform="rotate(-8 672 246)"/>
+                        <circle cx="674" cy="250" r="8" fill="#e6b894"/>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+
+            <div class="scene-text">
+                <p class="eyebrow">08 · Expériences hors IT</p>
+                <h2 class="section-title">Le sens du service<br>et des responsabilités</h2>
+                <div class="card offit-card" id="card-waiter">
+                    <div class="card-head">
+                        <span class="badge">Job d'été</span>
+                        <span class="card-icon"><i class="fas fa-bell-concierge"></i></span>
+                    </div>
+                    <h3>Serveur polyvalent · Kalon Digor</h3>
+                    <p>Service en salle et gestion des commandes. Adaptation à un environnement dynamique, travail en équipe et sens du service client.</p>
+                </div>
+                <div class="card offit-card" id="card-warden">
+                    <div class="card-head">
+                        <span class="badge">Lycée St Paul, Vannes</span>
+                        <span class="card-icon"><i class="fas fa-moon"></i></span>
+                    </div>
+                    <h3>Surveillant d'internat</h3>
+                    <p>Supervision des élèves en internat et coordination avec l'équipe de surveillants. Respect du règlement, gestion des situations du quotidien et maintien d'un cadre sécurisé et serein.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ HOBBIES ============ -->
+        <section id="hobbies" class="scene scene-hobbies">
+            <div class="hobby-stage" aria-hidden="true">
+                <svg id="sport-svg" class="stage-layer" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMax slice">
+                    <defs>
+                        <linearGradient id="dusk" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0" stop-color="#07090f"/>
+                            <stop offset="1" stop-color="#16244a"/>
+                        </linearGradient>
+                        <linearGradient id="turf" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0" stop-color="#1f7a52"/>
+                            <stop offset="1" stop-color="#11462f"/>
+                        </linearGradient>
+                        <radialGradient id="floodlight" cx=".5" cy=".5" r=".5">
+                            <stop offset="0" stop-color="#fff6d6" stop-opacity=".35"/>
+                            <stop offset="1" stop-color="#fff6d6" stop-opacity="0"/>
+                        </radialGradient>
+                    </defs>
+                    <rect width="1200" height="600" fill="url(#dusk)"/>
+                    <g>
+                        <circle cx="140" cy="90" r="120" fill="url(#floodlight)"/>
+                        <circle cx="1060" cy="90" r="120" fill="url(#floodlight)"/>
+                        <line x1="140" y1="90" x2="140" y2="440" stroke="#2a3550" stroke-width="6"/>
+                        <line x1="1060" y1="90" x2="1060" y2="440" stroke="#2a3550" stroke-width="6"/>
+                        <rect x="112" y="72" width="56" height="26" rx="4" fill="#fff6d6"/>
+                        <rect x="1032" y="72" width="56" height="26" rx="4" fill="#fff6d6"/>
+                    </g>
+                    <rect x="0" y="440" width="1200" height="160" fill="url(#turf)"/>
+                    <g stroke="#ffffff" stroke-opacity=".35" stroke-width="3" fill="none">
+                        <line x1="0" y1="470" x2="1200" y2="470"/>
+                        <line x1="600" y1="440" x2="600" y2="600"/>
+                        <ellipse cx="600" cy="540" rx="120" ry="30"/>
+                    </g>
+
+                    <!-- Course à pied -->
+                    <g id="ath-run">
+                        <ellipse cx="250" cy="562" rx="46" ry="8" fill="#000" opacity=".3">
+                            <animate attributeName="rx" values="46;36;46" dur=".35s" repeatCount="indefinite"/>
+                        </ellipse>
+                        <g class="speed-lines" stroke="#ffffff" stroke-opacity=".35" stroke-width="4" stroke-linecap="round">
+                            <line x1="120" y1="390" x2="180" y2="390"/>
+                            <line x1="100" y1="430" x2="170" y2="430"/>
+                            <line x1="130" y1="470" x2="185" y2="470"/>
+                        </g>
+                        <g>
+                            <animateTransform attributeName="transform" type="translate" values="0 0;0 -8;0 0" dur=".35s" repeatCount="indefinite"/>
+                            <!-- jambe arrière -->
+                            <g>
+                                <animateTransform attributeName="transform" type="rotate" values="-35 250 452;35 250 452;-35 250 452" dur=".7s" repeatCount="indefinite"/>
+                                <line x1="250" y1="452" x2="250" y2="505" stroke="#16203a" stroke-width="18" stroke-linecap="round"/>
+                                <g>
+                                    <animateTransform attributeName="transform" type="rotate" values="10 250 505;70 250 505;10 250 505" dur=".7s" repeatCount="indefinite"/>
+                                    <line x1="250" y1="505" x2="250" y2="552" stroke="#16203a" stroke-width="16" stroke-linecap="round"/>
+                                    <ellipse cx="258" cy="556" rx="13" ry="6" fill="#c9cfdc"/>
+                                </g>
+                            </g>
+                            <!-- bras arrière -->
+                            <g>
+                                <animateTransform attributeName="transform" type="rotate" values="40 252 380;-40 252 380;40 252 380" dur=".7s" repeatCount="indefinite"/>
+                                <line x1="252" y1="380" x2="252" y2="418" stroke="#d9a67f" stroke-width="12" stroke-linecap="round"/>
+                                <line x1="252" y1="418" x2="276" y2="408" stroke="#d9a67f" stroke-width="11" stroke-linecap="round"/>
+                            </g>
+                            <g transform="rotate(10 250 455)">
+                                <rect x="230" y="362" width="40" height="96" rx="18" fill="#4cc9f0"/>
+                                <rect x="238" y="392" width="24" height="20" rx="3" fill="#ffffff"/>
+                                <text x="250" y="407" text-anchor="middle" font-family="JetBrains Mono, monospace" font-weight="600" font-size="12" fill="#07090f">27</text>
+                                <rect x="232" y="440" width="36" height="22" rx="8" fill="#1f2a44"/>
+                                <circle cx="252" cy="334" r="22" fill="#f0c4a0"/>
+                                <path d="M230 332 Q231 309 252 309 Q273 309 274 330 Q265 320 252 320 Q238 320 230 332 Z" fill="#3b2a20"/>
+                                <rect x="230" y="318" width="44" height="6" rx="3" fill="#ff5d5d"/>
+                            </g>
+                            <!-- jambe avant -->
+                            <g>
+                                <animateTransform attributeName="transform" type="rotate" values="35 250 452;-35 250 452;35 250 452" dur=".7s" repeatCount="indefinite"/>
+                                <line x1="250" y1="452" x2="250" y2="505" stroke="#1f2a44" stroke-width="18" stroke-linecap="round"/>
+                                <g>
+                                    <animateTransform attributeName="transform" type="rotate" values="70 250 505;10 250 505;70 250 505" dur=".7s" repeatCount="indefinite"/>
+                                    <line x1="250" y1="505" x2="250" y2="552" stroke="#1f2a44" stroke-width="16" stroke-linecap="round"/>
+                                    <ellipse cx="258" cy="556" rx="13" ry="6" fill="#e8ecf4"/>
+                                </g>
+                            </g>
+                            <!-- bras avant -->
+                            <g>
+                                <animateTransform attributeName="transform" type="rotate" values="-40 256 380;40 256 380;-40 256 380" dur=".7s" repeatCount="indefinite"/>
+                                <line x1="256" y1="380" x2="256" y2="418" stroke="#f0c4a0" stroke-width="12" stroke-linecap="round"/>
+                                <line x1="256" y1="418" x2="280" y2="408" stroke="#f0c4a0" stroke-width="11" stroke-linecap="round"/>
+                            </g>
+                        </g>
+                        <text x="250" y="590" text-anchor="middle" class="svg-label lg">COURSE À PIED</text>
+                    </g>
+
+                    <!-- Musculation -->
+                    <g id="ath-gym">
+                        <ellipse cx="640" cy="562" rx="60" ry="8" fill="#000" opacity=".3"/>
+                        <g stroke-linecap="round" fill="none">
+                            <line x1="628" y1="452" x2="606" y2="556" stroke="#1f2a44" stroke-width="20"/>
+                            <line x1="652" y1="452" x2="674" y2="556" stroke="#1f2a44" stroke-width="20"/>
+                        </g>
+                        <ellipse cx="602" cy="560" rx="15" ry="6" fill="#e8ecf4"/>
+                        <ellipse cx="678" cy="560" rx="15" ry="6" fill="#e8ecf4"/>
+                        <rect x="612" y="362" width="56" height="100" rx="22" fill="#7b61ff"/>
+                        <rect x="614" y="440" width="52" height="26" rx="8" fill="#1f2a44"/>
+                        <circle cx="640" cy="336" r="23" fill="#d9a67f"/>
+                        <path d="M617 334 Q618 310 640 310 Q662 310 663 332 Q654 322 640 322 Q626 322 617 334 Z" fill="#1f1b18"/>
+                        <g stroke="#d9a67f" stroke-width="15" stroke-linecap="round">
+                            <line x1="618" y1="378" x2="600" y2="296"><animate attributeName="y2" values="296;352;296" dur="2.4s" repeatCount="indefinite"/></line>
+                            <line x1="662" y1="378" x2="680" y2="296"><animate attributeName="y2" values="296;352;296" dur="2.4s" repeatCount="indefinite"/></line>
+                        </g>
+                        <g>
+                            <animateTransform attributeName="transform" type="translate" values="0 0;0 56;0 0" dur="2.4s" repeatCount="indefinite"/>
+                            <line x1="540" y1="292" x2="740" y2="292" stroke="#c9cfdc" stroke-width="7" stroke-linecap="round"/>
+                            <rect x="552" y="260" width="14" height="64" rx="3" fill="#1b1f2a" stroke="#3a4256"/>
+                            <rect x="568" y="270" width="10" height="44" rx="3" fill="#c0392b"/>
+                            <rect x="714" y="260" width="14" height="64" rx="3" fill="#1b1f2a" stroke="#3a4256"/>
+                            <rect x="702" y="270" width="10" height="44" rx="3" fill="#c0392b"/>
+                        </g>
+                        <g>
+                            <rect x="700" y="544" width="40" height="6" rx="2" fill="#c9cfdc"/>
+                            <rect x="696" y="536" width="8" height="22" rx="2" fill="#1b1f2a"/>
+                            <rect x="736" y="536" width="8" height="22" rx="2" fill="#1b1f2a"/>
+                        </g>
+                        <text x="640" y="590" text-anchor="middle" class="svg-label lg">MUSCULATION</text>
+                    </g>
+
+                    <!-- Football -->
+                    <g id="ath-foot">
+                        <ellipse cx="950" cy="562" rx="50" ry="8" fill="#000" opacity=".3"/>
+                        <g fill="none" stroke="#ffffff" stroke-opacity=".8" stroke-width="5">
+                            <path d="M1100 560 L1100 470 L1190 470 L1190 560"/>
+                        </g>
+                        <g stroke="#ffffff" stroke-opacity=".2" stroke-width="1.5">
+                            <line x1="1115" y1="470" x2="1115" y2="560"/><line x1="1130" y1="470" x2="1130" y2="560"/><line x1="1145" y1="470" x2="1145" y2="560"/><line x1="1160" y1="470" x2="1160" y2="560"/><line x1="1175" y1="470" x2="1175" y2="560"/>
+                            <line x1="1100" y1="490" x2="1190" y2="490"/><line x1="1100" y1="510" x2="1190" y2="510"/><line x1="1100" y1="530" x2="1190" y2="530"/><line x1="1100" y1="550" x2="1190" y2="550"/>
+                        </g>
+                        <line x1="944" y1="455" x2="934" y2="556" stroke="#1f2a44" stroke-width="18" stroke-linecap="round"/>
+                        <ellipse cx="930" cy="560" rx="14" ry="6" fill="#111"/>
+                        <g>
+                            <animateTransform attributeName="transform" type="rotate" values="0 956 455;35 956 455;-8 956 455;-45 956 455;0 956 455;0 956 455" keyTimes="0;.18;.3;.38;.55;1" calcMode="spline" keySplines=".4 0 .6 1;.6 0 1 1;0 0 .4 1;.4 0 .6 1;0 0 1 1" dur="2.4s" repeatCount="indefinite"/>
+                            <line x1="956" y1="455" x2="984" y2="552" stroke="#1f2a44" stroke-width="18" stroke-linecap="round"/>
+                            <ellipse cx="990" cy="556" rx="14" ry="6" fill="#111"/>
+                        </g>
+                        <rect x="926" y="362" width="48" height="98" rx="20" fill="#3ddc97"/>
+                        <text x="950" y="420" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="22" fill="#0b3b27">10</text>
+                        <line x1="930" y1="380" x2="900" y2="420" stroke="#f0c4a0" stroke-width="14" stroke-linecap="round"/>
+                        <line x1="970" y1="380" x2="1000" y2="410" stroke="#f0c4a0" stroke-width="14" stroke-linecap="round"/>
+                        <circle cx="950" cy="336" r="23" fill="#f0c4a0"/>
+                        <path d="M927 334 Q928 310 950 310 Q972 310 973 332 Q964 322 950 322 Q936 322 927 334 Z" fill="#6b3f22"/>
+                        <g>
+                            <animateMotion dur="2.4s" repeatCount="indefinite" keyPoints="0;0;1;1;0;0" keyTimes="0;.3;.55;.9;.92;1" calcMode="linear" path="M1006 546 Q1070 440 1150 520"/>
+                            <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;.6;.66;.92;1" dur="2.4s" repeatCount="indefinite"/>
+                            <circle r="14" fill="#ffffff"/>
+                            <polygon points="0,-6 5,-2 3,4 -3,4 -5,-2" fill="#111"/>
+                        </g>
+                        <text x="950" y="590" text-anchor="middle" class="svg-label lg">FOOTBALL</text>
+                    </g>
+                </svg>
+
+                <svg id="space-svg" class="stage-layer space-layer" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice">
+                    <defs>
+                        <linearGradient id="spaceBg" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0" stop-color="#02030a"/>
+                            <stop offset="1" stop-color="#0b1236"/>
+                        </linearGradient>
+                        <radialGradient id="planet" cx=".35" cy=".3" r=".75">
+                            <stop offset="0" stop-color="#9bd7ff"/>
+                            <stop offset=".5" stop-color="#3a5ccc"/>
+                            <stop offset="1" stop-color="#0c1240"/>
+                        </radialGradient>
+                        <radialGradient id="nebula" cx=".5" cy=".5" r=".5">
+                            <stop offset="0" stop-color="#7b61ff" stop-opacity=".35"/>
+                            <stop offset="1" stop-color="#7b61ff" stop-opacity="0"/>
+                        </radialGradient>
+                        <radialGradient id="engine" cx="1" cy=".5" r="1">
+                            <stop offset="0" stop-color="#bdefff"/>
+                            <stop offset=".4" stop-color="#4cc9f0" stop-opacity=".8"/>
+                            <stop offset="1" stop-color="#4cc9f0" stop-opacity="0"/>
+                        </radialGradient>
+                    </defs>
+                    <rect width="1200" height="600" fill="url(#spaceBg)"/>
+                    <ellipse cx="300" cy="200" rx="360" ry="180" fill="url(#nebula)"/>
+                    <g id="stars"></g>
+                    <g id="planet-g">
+                        <circle cx="980" cy="560" r="280" fill="url(#planet)"/>
+                        <ellipse cx="980" cy="560" rx="420" ry="60" fill="none" stroke="#bdefff" stroke-opacity=".25" stroke-width="10" transform="rotate(-12 980 560)"/>
+                    </g>
+                    <line id="shooting-star" x1="0" y1="0" x2="90" y2="30" stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0"/>
+                    <g id="ship" transform="translate(-200 280)">
+                        <g class="ship-bob">
+                            <ellipse cx="-130" cy="-6" rx="60" ry="7" fill="url(#engine)" class="flame"/>
+                            <ellipse cx="-130" cy="10" rx="60" ry="7" fill="url(#engine)" class="flame"/>
+                            <path d="M-40 -16 L0 -66 L40 -66 L30 -16 Z" fill="#7f8aa3"/>
+                            <path d="M-40 18 L0 70 L40 70 L30 18 Z" fill="#69748c"/>
+                            <path d="M-92 -18 L-60 -20 L40 -22 L120 -8 L170 2 L120 12 L40 26 L-60 22 L-92 20 Z" fill="#c7d0e0"/>
+                            <path d="M-92 4 L170 2 L120 12 L40 26 L-60 22 L-92 20 Z" fill="#a4aec3"/>
+                            <rect x="-100" y="-14" width="14" height="14" rx="2" fill="#4a546d"/>
+                            <rect x="-100" y="4" width="14" height="14" rx="2" fill="#4a546d"/>
+                            <path d="M50 -18 Q90 -22 118 -6 L60 -4 Z" fill="#4cc9f0" opacity=".9"/>
+                            <line x1="-50" y1="2" x2="100" y2="2" stroke="#7f8aa3" stroke-width="2"/>
+                            <rect x="8" y="-70" width="40" height="5" rx="2" fill="#4cc9f0" opacity=".8"/>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+
+            <div class="hobby-texts">
+                <div class="hobby-text card glass" id="hobby-sport">
+                    <p class="eyebrow">09 · Hobbies</p>
+                    <h2 class="section-title">Multi-sport</h2>
+                    <p>Le sport m'apporte discipline, régularité et esprit d'équipe : des qualités que je retrouve dans mes projets.</p>
+                    <ul class="chips">
+                        <li class="chip"><i class="fas fa-person-running"></i> Course à pied</li>
+                        <li class="chip"><i class="fas fa-dumbbell"></i> Musculation</li>
+                        <li class="chip"><i class="fas fa-futbol"></i> Football</li>
+                    </ul>
+                </div>
+                <div class="hobby-text card glass" id="hobby-space">
+                    <p class="eyebrow">09 · Hobbies</p>
+                    <h2 class="section-title">Jeux <span class="grad">vidéo</span></h2>
+                    <p>Explorer, coopérer, construire et optimiser : les jeux auxquels je joue nourrissent ma curiosité pour les systèmes complexes.</p>
+                    <ul class="games">
+                        <li><i class="fas fa-rocket"></i><div><strong>Star Citizen</strong><span>Exploration spatiale et jeu en équipage</span></div></li>
+                        <li><i class="fas fa-car-side"></i><div><strong>Rocket League</strong><span>Réflexes, coordination et esprit d'équipe</span></div></li>
+                        <li><i class="fas fa-cubes"></i><div><strong>Minecraft</strong><span>Construction, créativité et redstone</span></div></li>
+                        <li><i class="fas fa-industry"></i><div><strong>Satisfactory</strong><span>Automatisation et optimisation d'usines</span></div></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ CONTACT ============ -->
+        <section id="contact" class="section contact">
+            <div class="container contact-inner">
+                <p class="eyebrow reveal">10 · Contact</p>
+                <h2 class="section-title big reveal">Travaillons<br><span class="grad">ensemble</span>.</h2>
+                <p class="lead reveal">Vous cherchez un alternant motivé en informatique / cybersécurité pour la rentrée 2027 ? Écrivez-moi.</p>
+                <div class="contact-actions reveal">
+                    <a class="btn btn-primary" href="mailto:charly.richardfromont@gmail.com"><i class="fas fa-envelope"></i> charly.richardfromont@gmail.com</a>
+                    <a class="btn btn-ghost" href="https://www.linkedin.com/in/charly-richard-fromont-b95b0a2b6" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a class="btn btn-ghost" href="https://github.com/charly-2025" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+                    <a class="btn btn-ghost" href="CV-Charly-Richard-Fromont.pdf" download><i class="fas fa-file-arrow-down"></i> CV</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>© <span id="year">2026</span> Charly Richard-Fromont</p>
+        <p class="muted">Conçu et développé à la main · HTML, CSS, GSAP</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="js/main.js" defer></script>
 </body>
 </html>
