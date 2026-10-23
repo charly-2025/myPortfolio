@@ -1,6 +1,6 @@
 # Portfolio · Charly Richard-Fromont
 
-My personal portfolio: a single-page website built by hand, with scroll-driven
+My personal portfolio: a single-page website with scroll-driven
 animated scenes that tell my journey as a computer science student
 specializing in **cybersecurity** at Epitech Rennes.
 
