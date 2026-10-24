@@ -1926,3 +1926,146 @@ footer {
         animation: none;
     }
 }
+
+/* =====================================================================
+   Sobriété : plus de capsules à fond semi-transparent pour les étiquettes.
+   Les vrais boutons (Télécharger le CV, CV) et les cartes restent inchangés.
+   ===================================================================== */
+
+/* Disponibilité : une simple ligne de texte */
+.status-pill {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.status-pill .dot {
+    display: none;
+}
+
+/* Dates et domaines des cartes : texte discret */
+.badge,
+.badge-accent {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+/* Stack des projets : liste en texte séparée par des points */
+.tags {
+    gap: 0;
+}
+
+.tags span {
+    padding: 0;
+    border-radius: 0;
+    background: none;
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+/* Séparateur placé après chaque élément : les retours à la ligne tombent après lui */
+.tags,
+.chips,
+.chips-sm {
+    display: block;
+}
+
+.tags span,
+.chips .chip,
+.chips-sm li {
+    display: inline;
+}
+
+.tags span,
+.chips .chip,
+.chips-sm li,
+.skills-panel .chips-sm li,
+.skills-panel .chips-soft .chip {
+    padding: 0;
+    white-space: nowrap;
+}
+
+/* Le séparateur porte l'espace sécable : un mot-clé n'est jamais coupé */
+.tags span:not(:last-child)::after,
+.chips .chip:not(:last-child)::after,
+.chips-sm li:not(:last-child)::after {
+    content: "\00a0· ";
+    white-space: normal;
+    color: rgba(255, 255, 255, 0.28);
+}
+
+/* Mots-clés (compétences, soft skills, loisirs) : texte simple */
+.chips,
+.chips-sm {
+    gap: 0;
+}
+
+.chip,
+.chips-soft .chip,
+.chips-sm li {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #c8d0df;
+}
+
+.chip:hover {
+    transform: none;
+    background: none;
+}
+
+
+
+.chips-sm li {
+    font-size: 0.82rem;
+    line-height: 1.7;
+}
+
+.skills-panel .chips-soft .chip {
+    padding: 0;
+    font-size: 0.92rem;
+}
+
+/* Icônes des cartes : sans pastille de fond */
+.card-icon {
+    width: auto;
+    height: auto;
+    background: none;
+    border: 0;
+    border-radius: 0;
+    font-size: 1.15rem;
+}
+
+/* Jeux vidéo : liste à filets plutôt que petites cases */
+.games li {
+    padding: 10px 0;
+    border: 0;
+    border-top: 1px solid var(--line);
+    border-radius: 0;
+    background: none;
+}
+
+/* Chiffres du profil : colonnes séparées par un filet */
+.stat {
+    padding: 14px 0 0;
+    border: 0;
+    border-top: 1px solid var(--line);
+    border-radius: 0;
+    background: none;
+}
