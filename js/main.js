@@ -9,6 +9,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    /* ---------- Rechargement : on revient à la même position une fois la page prête ---------- */
+    let savedScroll = 0;
+    try { savedScroll = location.hash ? 0 : +sessionStorage.getItem('scrollY') || 0; } catch (e) { /* stockage indisponible */ }
+    window.addEventListener('pagehide', () => {
+        try { sessionStorage.setItem('scrollY', String(window.scrollY)); } catch (e) { /* stockage indisponible */ }
+    });
+    let restored = false;
+    function restoreScroll() {
+        if (restored) return;
+        restored = true;
+        if (savedScroll > 0) window.scrollTo(0, savedScroll);
+        document.documentElement.classList.remove('restoring');
+    }
+    setTimeout(restoreScroll, 2500); // filet de sécurité
+
     /* ---------- Menu mobile ---------- */
     function setMenu(open) {
         nav.classList.toggle('open', open);
@@ -161,6 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* ---------- Animations au scroll ---------- */
     if (!window.gsap || !window.ScrollTrigger || reduceMotion) {
+        restoreScroll();
         measureSections();
         onScroll();
         return;
@@ -177,9 +193,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Hero
-    gsap.from('.hero-title .line span', { yPercent: 110, duration: 1.1, ease: 'expo.out', stagger: 0.12, delay: 0.1 });
-    gsap.from(['.status-pill', '.hero-role', '.hero-actions', '.hero-meta'], { y: 24, opacity: 0, duration: 0.9, ease: 'power3.out', stagger: 0.08, delay: 0.35 });
-    gsap.from('.hero-card', { y: 40, opacity: 0, rotateX: 10, duration: 1.2, ease: 'power3.out', delay: 0.5 });
     gsap.to('.hero-inner', {
         yPercent: -12, opacity: 0.2, ease: 'none',
         scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true },
@@ -361,7 +374,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 ctx.add(step);
                 await yieldToMain();
             }
-            if (!cancelled) ScrollTrigger.refresh();
+            if (!cancelled) {
+                ScrollTrigger.refresh();
+                restoreScroll();
+                measureSections();
+                onScroll();
+            }
         })();
         return () => { cancelled = true; };
     };
