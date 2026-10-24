@@ -108,9 +108,9 @@ document.addEventListener('DOMContentLoaded', () => {
         ['p', '$ ', 'c', 'whoami'],
         ['', 'charly, étudiant Epitech Rennes'],
         ['p', '$ ', 'c', 'cat focus.txt'],
+        ['k', '› ', '', 'Développement d\'applications'],
+        ['k', '› ', '', 'Data & IA'],
         ['k', '› ', '', 'Cybersécurité offensive & défensive'],
-        ['k', '› ', '', 'Pentest web · CTF · Cryptographie'],
-        ['k', '› ', '', 'Développement full-stack'],
         ['p', '$ ', 'c', './status --alternance'],
         ['', 'Disponible · rentrée 2027 ✔'],
     ];
