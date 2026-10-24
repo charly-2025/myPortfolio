@@ -1062,7 +1062,16 @@ h3 {
     font-size: 0.88rem;
     font-weight: 600;
     color: var(--accent);
-    transition: color 0.2s ease, gap 0.2s ease;
+    transition: color 0.2s ease;
+}
+
+/* La flèche glisse au survol sans changer la taille du lien (évite les sauts de ligne en boucle) */
+.repo-link .icon:last-child {
+    transition: transform 0.2s ease;
+}
+
+.repo-link:hover .icon:last-child {
+    transform: translate(2px, -2px);
 }
 
 .repo-link .icon:last-child {
@@ -1071,7 +1080,6 @@ h3 {
 
 .repo-link:hover {
     color: var(--text);
-    gap: 11px;
 }
 
 .repo-link[href=""] {
@@ -1094,7 +1102,6 @@ h3 {
 
 .perso-card:hover {
     border-color: rgba(76, 201, 240, 0.35);
-    transform: translateY(-4px);
 }
 
 .perso-card h3 {
