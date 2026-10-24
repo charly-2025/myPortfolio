@@ -343,19 +343,27 @@ h3 {
     right: -50%;
     bottom: -10%;
     height: 70%;
-    background-image:
-        linear-gradient(rgba(76, 201, 240, 0.18) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(76, 201, 240, 0.18) 1px, transparent 1px);
-    background-size: 60px 60px;
+    overflow: hidden;
     transform: perspective(600px) rotateX(62deg);
     transform-origin: 50% 0;
     mask-image: linear-gradient(to bottom, transparent, #000 30%, #000 60%, transparent);
     -webkit-mask-image: linear-gradient(to bottom, transparent, #000 30%, #000 60%, transparent);
+}
+
+.grid-floor::before {
+    content: "";
+    position: absolute;
+    inset: -60px 0 0 0;
+    background-image:
+        linear-gradient(rgba(76, 201, 240, 0.18) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(76, 201, 240, 0.18) 1px, transparent 1px);
+    background-size: 60px 60px;
+    will-change: transform;
     animation: grid-move 6s linear infinite;
 }
 
 @keyframes grid-move {
-    to { background-position: 0 60px, 0 0; }
+    to { transform: translateY(60px); }
 }
 
 .orb {
@@ -417,13 +425,21 @@ h3 {
     height: 8px;
     border-radius: 50%;
     background: var(--ok);
-    box-shadow: 0 0 0 0 rgba(61, 220, 151, 0.6);
+    position: relative;
+}
+
+.status-pill .dot::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: var(--ok);
     animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-    70% { box-shadow: 0 0 0 10px rgba(61, 220, 151, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(61, 220, 151, 0); }
+    0% { transform: scale(1); opacity: 0.6; }
+    70%, 100% { transform: scale(3.4); opacity: 0; }
 }
 
 .hero-title {
@@ -1133,7 +1149,6 @@ h3 {
     width: calc(96px * var(--s));
     height: calc(96px * var(--s));
     transform-style: preserve-3d;
-    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.55));
     opacity: calc(0.45 + var(--d) * 0.35);
 }
 
@@ -1159,7 +1174,7 @@ h3 {
 
 .coin-spin::before {
     background: radial-gradient(circle at 30% 25%, #ffffff, #dfe4ee 55%, #b8c0d0);
-    box-shadow: inset 0 0 0 4px rgba(255, 255, 255, 0.8), inset 0 -6px 14px rgba(0, 0, 0, 0.18);
+    box-shadow: inset 0 0 0 4px rgba(255, 255, 255, 0.8), inset 0 -6px 14px rgba(0, 0, 0, 0.18), 0 18px 28px -10px rgba(0, 0, 0, 0.6);
     transform: translateZ(5px);
 }
 
@@ -1813,4 +1828,15 @@ h3 {
     transform-box: fill-box;
     transform-origin: 50% 50%;
     animation: gear 0.8s linear infinite;
+}
+
+/* ---------- Performance : animations en pause hors écran ---------- */
+.offscreen *,
+.offscreen *::before,
+.offscreen *::after {
+    animation-play-state: paused !important;
+}
+
+.coin-spin {
+    will-change: transform;
 }

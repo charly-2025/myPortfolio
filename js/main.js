@@ -42,20 +42,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* ---------- Progression + section active ---------- */
     let ticking = false;
+    let sectionTops = [];
+    let maxScroll = 1;
+
+    // Mesuré une seule fois (chargement, redimensionnement, refresh GSAP) au lieu de chaque scroll
+    function measureSections() {
+        sectionTops = sections.map(sec => ({ id: sec.id, top: sectionTop(sec) }));
+        maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    }
 
     function onScroll() {
-        const max = document.documentElement.scrollHeight - window.innerHeight;
-        progress.style.transform = `scaleX(${max > 0 ? window.scrollY / max : 0})`;
+        progress.style.transform = `scaleX(${maxScroll > 0 ? Math.min(1, window.scrollY / maxScroll) : 0})`;
         header.classList.toggle('scrolled', window.scrollY > 20);
 
         let current = sections[0].id;
         const mid = window.scrollY + window.innerHeight * 0.45;
-        sections.forEach(sec => {
-            if (sectionTop(sec) <= mid) current = sec.id;
+        sectionTops.forEach(sec => {
+            if (sec.top <= mid) current = sec.id;
         });
         navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
         ticking = false;
     }
+
+    window.addEventListener('resize', () => { measureSections(); onScroll(); }, { passive: true });
+
+    /* ---------- Pause des animations hors écran ---------- */
+    // Les animations CSS et SMIL des sections invisibles ne consomment plus de CPU
+    const animObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            const visible = entry.isIntersecting && !reduceMotion;
+            entry.target.classList.toggle('offscreen', !visible);
+            entry.target.querySelectorAll('svg').forEach(svg => {
+                if (!svg.pauseAnimations) return;
+                if (visible) svg.unpauseAnimations();
+                else svg.pauseAnimations();
+            });
+        });
+    }, { rootMargin: '200px 0px' });
+    sections.forEach(sec => animObserver.observe(sec));
 
     window.addEventListener('scroll', () => {
         if (!ticking) {
@@ -137,6 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* ---------- Animations au scroll ---------- */
     if (!window.gsap || !window.ScrollTrigger || reduceMotion) {
+        measureSections();
         onScroll();
         return;
     }
@@ -321,7 +346,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const mm = gsap.matchMedia();
 
-    mm.add('(min-width: 960px) and (min-height: 640px)', () => {
+    // Découpe la mise en place en tâches courtes pour ne pas bloquer le navigateur au chargement
+    const yieldToMain = () => new Promise(resolve => setTimeout(resolve, 0));
+    const runInSteps = (ctx, steps) => {
+        let cancelled = false;
+        (async () => {
+            // Après le premier affichage (ou au plus tard 100 ms, si l'onglet est en arrière-plan)
+            await new Promise(resolve => {
+                requestAnimationFrame(() => setTimeout(resolve, 0));
+                setTimeout(resolve, 100);
+            });
+            for (const step of steps) {
+                if (cancelled) return;
+                ctx.add(step);
+                await yieldToMain();
+            }
+            if (!cancelled) ScrollTrigger.refresh();
+        })();
+        return () => { cancelled = true; };
+    };
+
+    mm.add('(min-width: 960px) and (min-height: 640px)', (ctx) => {
+        const steps = [];
         // Scènes épinglées : la progression suit le scroll (défilé).
         // L'animation démarre un peu avant l'épinglage pour que la scène ne soit jamais vide.
         const vh = () => window.innerHeight;
@@ -342,18 +388,23 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         };
 
-        pinScene('education', 1.6, scenes.education());
+        steps.push(() => pinScene('education', 1.6, scenes.education()));
 
         // Projets d'études : défilement horizontal
         const track = document.querySelector('.h-track');
         const distance = () => Math.max(0, track.scrollWidth - window.innerWidth);
         // Effet écran incurvé : chaque carte pivote vers le centre selon sa position
         const xpCards = gsap.utils.toArray('.xp-card');
+        let cardCenters = [];
+        const measureCards = () => {
+            const trackLeft = track.getBoundingClientRect().left - (gsap.getProperty(track, 'x') || 0);
+            cardCenters = xpCards.map(card => trackLeft + card.offsetLeft + card.offsetWidth / 2);
+        };
         const curve = () => {
             const mid = window.innerWidth / 2;
-            xpCards.forEach(card => {
-                const r = card.getBoundingClientRect();
-                const d = gsap.utils.clamp(-1.6, 1.6, (r.left + r.width / 2 - mid) / mid);
+            const x = gsap.getProperty(track, 'x') || 0;
+            xpCards.forEach((card, i) => {
+                const d = gsap.utils.clamp(-1.6, 1.6, (cardCenters[i] + x - mid) / mid);
                 gsap.set(card, {
                     rotationY: -d * 24,
                     z: -Math.abs(d) * 70,
@@ -363,7 +414,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             });
         };
-        gsap.to(track, {
+        steps.push(() => gsap.to(track, {
             x: () => -distance(),
             ease: 'none',
             onUpdate: curve,
@@ -375,25 +426,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 scrub: 1,
                 invalidateOnRefresh: true,
             },
+        }));
+        const onCurveRefresh = () => { measureCards(); curve(); };
+        steps.push(() => {
+            gsap.from('.h-head > *', {
+                y: 40, opacity: 0, stagger: 0.1, duration: 0.8,
+                scrollTrigger: { trigger: '#projects', start: 'top 70%' },
+            });
+            onCurveRefresh();
+            ScrollTrigger.addEventListener('refresh', onCurveRefresh);
         });
-        gsap.from('.h-head > *', {
-            y: 40, opacity: 0, stagger: 0.1, duration: 0.8,
-            scrollTrigger: { trigger: '#projects', start: 'top 70%' },
-        });
-        curve();
-        ScrollTrigger.addEventListener('refresh', curve);
 
-        pinScene('homelab', 1.4, scenes.homelab());
+        steps.push(() => pinScene('homelab', 1.4, scenes.homelab()));
         const panel = document.querySelector('.skills-panel');
-        if (panel.offsetHeight < window.innerHeight - 90) {
-            pinScene('skills', 1, scenes.skills());
-        } else {
-            ScrollTrigger.create({ trigger: '#skills', start: 'top 70%', end: 'bottom 60%', scrub: 1, animation: scenes.skills() });
-        }
-        pinScene('offit', 2, scenes.offit());
+        steps.push(() => {
+            if (panel.offsetHeight < window.innerHeight - 90) {
+                pinScene('skills', 1, scenes.skills());
+            } else {
+                ScrollTrigger.create({ trigger: '#skills', start: 'top 70%', end: 'bottom 60%', scrub: 1, animation: scenes.skills() });
+            }
+        });
+        steps.push(() => pinScene('offit', 2, scenes.offit()));
 
         // Hobbies : terrain de sport → espace (Star Citizen)
-        pinScene('hobbies', 2.6, gsap.timeline()
+        steps.push(() => pinScene('hobbies', 2.6, gsap.timeline()
             .from('#hobby-sport', { y: 50, opacity: 0, duration: 0.5 })
             .from(['#ath-run', '#ath-gym', '#ath-foot'], { y: 200, opacity: 0, duration: 0.8, stagger: 0.25, ease: 'back.out(1.2)' }, '<')
             .to({}, { duration: 0.8 })
@@ -402,15 +458,16 @@ document.addEventListener('DOMContentLoaded', () => {
             .to('#hobby-sport', { autoAlpha: 0, y: -30, duration: 0.4 }, '<')
             .to('#hobby-space', { autoAlpha: 1, duration: 0.5 }, '<0.6')
             .to('#planet-g', { y: -40, duration: 2.2, ease: 'none' })
-            .to('#stars', { x: -80, duration: 2.2, ease: 'none' }, '<'));
+            .to('#stars', { x: -80, duration: 2.2, ease: 'none' }, '<')));
 
-        // Pièces 3D : parallaxe selon la profondeur + souris
-        gsap.utils.toArray('.coin').forEach(coin => {
-            const d = parseFloat(getComputedStyle(coin).getPropertyValue('--d')) || 1;
-            gsap.to(coin, {
-                yPercent: -60 * d,
-                ease: 'none',
+        // Pièces 3D : parallaxe selon la profondeur + souris (une seule timeline pour toutes les pièces)
+        steps.push(() => {
+            const parallax = gsap.timeline({
                 scrollTrigger: { trigger: '#skills', start: 'top bottom', end: 'bottom top', scrub: true },
+            });
+            gsap.utils.toArray('.coin').forEach(coin => {
+                const d = parseFloat(coin.style.getPropertyValue('--d')) || 1;
+                parallax.to(coin, { yPercent: -60 * d, ease: 'none', duration: 1 }, 0);
             });
         });
         const coinsLayer = document.querySelector('.coins');
@@ -422,30 +479,36 @@ document.addEventListener('DOMContentLoaded', () => {
             tiltY((e.clientY / window.innerHeight - 0.5) * -10);
         };
         skillsSec.addEventListener('mousemove', onMove);
-        attachLoops();
+        steps.push(attachLoops);
+        const stop = runInSteps(ctx, steps);
         return () => {
+            stop();
             skillsSec.removeEventListener('mousemove', onMove);
-            ScrollTrigger.removeEventListener('refresh', curve);
+            ScrollTrigger.removeEventListener('refresh', onCurveRefresh);
         };
     });
 
-    mm.add('(max-width: 959px), (max-height: 639px)', () => {
+    mm.add('(max-width: 959px), (max-height: 639px)', (ctx) => {
         // Mobile : chaque scène se joue une fois en entrant dans l'écran
-        Object.keys(scenes).forEach(id => {
+        const steps = Object.keys(scenes).map(id => () => {
             const tl = scenes[id]();
             tl.pause();
             ScrollTrigger.create({ trigger: '#' + id, start: 'top 70%', once: true, onEnter: () => tl.play() });
         });
-        document.querySelectorAll('.h-head > *, .xp-card, .hobby-text, .stage-layer').forEach(el => {
-            gsap.from(el, {
-                y: 40, opacity: 0, duration: 0.8, ease: 'power3.out',
-                scrollTrigger: { trigger: el, start: 'top 90%' },
+        steps.push(() => {
+            document.querySelectorAll('.h-head > *, .xp-card, .hobby-text, .stage-layer').forEach(el => {
+                gsap.from(el, {
+                    y: 40, opacity: 0, duration: 0.8, ease: 'power3.out',
+                    scrollTrigger: { trigger: el, start: 'top 90%' },
+                });
             });
         });
-        attachLoops();
+        steps.push(attachLoops);
+        return runInSteps(ctx, steps);
     });
 
-    ScrollTrigger.addEventListener('refresh', onScroll);
+    ScrollTrigger.addEventListener('refresh', () => { measureSections(); onScroll(); });
     window.addEventListener('load', () => ScrollTrigger.refresh());
+    measureSections();
     onScroll();
 });

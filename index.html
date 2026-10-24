@@ -43,10 +43,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Polices et icônes chargées sans bloquer le premier affichage -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    </noscript>
     <link rel="stylesheet" href="style/index.css">
 </head>
 
@@ -123,7 +127,7 @@
                         </div>
                         <div class="terminal-body">
                             <div class="terminal-id">
-                                <img src="crf.webp" alt="Portrait de Charly Richard-Fromont" width="200" height="250">
+                                <img src="crf-thumb.webp" alt="Portrait de Charly Richard-Fromont" width="128" height="128" decoding="async">
                                 <div>
                                     <p class="t-name">Charly R.-F.</p>
                                     <p class="t-sub">Bachelor 2 · Cybersécurité</p>
@@ -708,33 +712,33 @@
         <!-- ============ COMPÉTENCES ============ -->
         <section id="skills" class="scene scene-skills">
             <div class="coins" aria-hidden="true">
-                <div class="coin" style="--x:6%;--y:14%;--s:1.1;--d:1.4"><div class="coin-spin" style="--t:7s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/python/python-original.svg" alt=""></div></div>
-                <div class="coin" style="--x:22%;--y:70%;--s:.8;--d:.7"><div class="coin-spin" style="--t:9s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/react/react-original.svg" alt=""></div></div>
-                <div class="coin" style="--x:84%;--y:12%;--s:1;--d:1.1"><div class="coin-spin" style="--t:8s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/docker/docker-original.svg" alt=""></div></div>
+                <div class="coin" style="--x:6%;--y:14%;--s:1.1;--d:1.4"><div class="coin-spin" style="--t:7s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/python/python-original.svg" alt="" width="52" height="52" loading="lazy" decoding="async"></div></div>
+                <div class="coin" style="--x:22%;--y:70%;--s:.8;--d:.7"><div class="coin-spin" style="--t:9s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/react/react-original.svg" alt="" width="52" height="52" loading="lazy" decoding="async"></div></div>
+                <div class="coin" style="--x:84%;--y:12%;--s:1;--d:1.1"><div class="coin-spin" style="--t:8s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/docker/docker-original.svg" alt="" width="52" height="52" loading="lazy" decoding="async"></div></div>
                 <div class="coin" style="--x:90%;--y:62%;--s:1.25;--d:1.6"><div class="coin-spin" style="--t:10s"><span class="mask" style="--icon:url(https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/burpsuite.svg);--c:#ff6633"></span></div></div>
-                <div class="coin" style="--x:3%;--y:52%;--s:.75;--d:.6"><div class="coin-spin" style="--t:6.5s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/nodejs/nodejs-original.svg" alt=""></div></div>
-                <div class="coin" style="--x:72%;--y:84%;--s:.85;--d:.9"><div class="coin-spin" style="--t:7.5s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/github/github-original.svg" alt=""></div></div>
-                <div class="coin" style="--x:40%;--y:6%;--s:.7;--d:.5"><div class="coin-spin" style="--t:8.5s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/mysql/mysql-original.svg" alt=""></div></div>
-                <div class="coin" style="--x:62%;--y:4%;--s:.8;--d:.8"><div class="coin-spin" style="--t:9.5s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/figma/figma-original.svg" alt=""></div></div>
-                <div class="coin" style="--x:12%;--y:88%;--s:1;--d:1.2"><div class="coin-spin" style="--t:7.2s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/java/java-original.svg" alt=""></div></div>
-                <div class="coin" style="--x:44%;--y:88%;--s:.7;--d:.55"><div class="coin-spin" style="--t:8.2s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/vscode/vscode-original.svg" alt=""></div></div>
+                <div class="coin" style="--x:3%;--y:52%;--s:.75;--d:.6"><div class="coin-spin" style="--t:6.5s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/nodejs/nodejs-original.svg" alt="" width="52" height="52" loading="lazy" decoding="async"></div></div>
+                <div class="coin" style="--x:72%;--y:84%;--s:.85;--d:.9"><div class="coin-spin" style="--t:7.5s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/github/github-original.svg" alt="" width="52" height="52" loading="lazy" decoding="async"></div></div>
+                <div class="coin" style="--x:40%;--y:6%;--s:.7;--d:.5"><div class="coin-spin" style="--t:8.5s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/mysql/mysql-original.svg" alt="" width="52" height="52" loading="lazy" decoding="async"></div></div>
+                <div class="coin" style="--x:62%;--y:4%;--s:.8;--d:.8"><div class="coin-spin" style="--t:9.5s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/figma/figma-original.svg" alt="" width="52" height="52" loading="lazy" decoding="async"></div></div>
+                <div class="coin" style="--x:12%;--y:88%;--s:1;--d:1.2"><div class="coin-spin" style="--t:7.2s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/java/java-original.svg" alt="" width="52" height="52" loading="lazy" decoding="async"></div></div>
+                <div class="coin" style="--x:44%;--y:88%;--s:.7;--d:.55"><div class="coin-spin" style="--t:8.2s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/vscode/vscode-original.svg" alt="" width="52" height="52" loading="lazy" decoding="async"></div></div>
                 <div class="coin" style="--x:78%;--y:38%;--s:.65;--d:.45"><div class="coin-spin" style="--t:6.8s"><span class="mask" style="--icon:url(https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/ollama.svg);--c:#111"></span></div></div>
                 <div class="coin" style="--x:16%;--y:32%;--s:.65;--d:.5"><div class="coin-spin" style="--t:9.2s"><span class="mono-logo">EXG</span></div></div>
-                <div class="coin" style="--x:30%;--y:46%;--s:.6;--d:.4"><div class="coin-spin" style="--t:8.8s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/mongodb/mongodb-original.svg" alt=""></div></div>
-                <div class="coin" style="--x:56%;--y:92%;--s:.75;--d:.7"><div class="coin-spin" style="--t:7.8s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/linux/linux-original.svg" alt=""></div></div>
-                <div class="coin" style="--x:94%;--y:86%;--s:.7;--d:.6"><div class="coin-spin" style="--t:9.6s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/pandas/pandas-original.svg" alt=""></div></div>
-                <div class="coin" style="--x:28%;--y:4%;--s:.75;--d:.75"><div class="coin-spin" style="--t:6.6s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/javascript/javascript-original.svg" alt=""></div></div>
-                <div class="coin" style="--x:2%;--y:30%;--s:.7;--d:.55"><div class="coin-spin" style="--t:8.4s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/postgresql/postgresql-original.svg" alt=""></div></div>
-                <div class="coin" style="--x:8%;--y:72%;--s:.6;--d:.45"><div class="coin-spin" style="--t:7.1s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/flask/flask-original.svg" alt=""></div></div>
-                <div class="coin" style="--x:36%;--y:96%;--s:.6;--d:.5"><div class="coin-spin" style="--t:9.1s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/fastapi/fastapi-original.svg" alt=""></div></div>
-                <div class="coin" style="--x:66%;--y:14%;--s:.6;--d:.45"><div class="coin-spin" style="--t:6.9s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/nginx/nginx-original.svg" alt=""></div></div>
-                <div class="coin" style="--x:86%;--y:28%;--s:.75;--d:.7"><div class="coin-spin" style="--t:8.6s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/raspberrypi/raspberrypi-original.svg" alt=""></div></div>
-                <div class="coin" style="--x:50%;--y:2%;--s:.55;--d:.4"><div class="coin-spin" style="--t:7.4s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/vitejs/vitejs-original.svg" alt=""></div></div>
-                <div class="coin" style="--x:20%;--y:94%;--s:.6;--d:.5"><div class="coin-spin" style="--t:9.4s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/jupyter/jupyter-original.svg" alt=""></div></div>
-                <div class="coin" style="--x:97%;--y:48%;--s:.55;--d:.4"><div class="coin-spin" style="--t:6.7s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/numpy/numpy-original.svg" alt=""></div></div>
-                <div class="coin" style="--x:74%;--y:70%;--s:.6;--d:.5"><div class="coin-spin" style="--t:8.1s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/githubactions/githubactions-original.svg" alt=""></div></div>
-                <div class="coin" style="--x:60%;--y:96%;--s:.55;--d:.45"><div class="coin-spin" style="--t:7.7s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/cloudflare/cloudflare-original.svg" alt=""></div></div>
-                <div class="coin" style="--x:24%;--y:20%;--s:.55;--d:.4"><div class="coin-spin" style="--t:9.8s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/prisma/prisma-original.svg" alt=""></div></div>
+                <div class="coin" style="--x:30%;--y:46%;--s:.6;--d:.4"><div class="coin-spin" style="--t:8.8s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/mongodb/mongodb-original.svg" alt="" width="52" height="52" loading="lazy" decoding="async"></div></div>
+                <div class="coin" style="--x:56%;--y:92%;--s:.75;--d:.7"><div class="coin-spin" style="--t:7.8s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/linux/linux-original.svg" alt="" width="52" height="52" loading="lazy" decoding="async"></div></div>
+                <div class="coin" style="--x:94%;--y:86%;--s:.7;--d:.6"><div class="coin-spin" style="--t:9.6s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/pandas/pandas-original.svg" alt="" width="52" height="52" loading="lazy" decoding="async"></div></div>
+                <div class="coin" style="--x:28%;--y:4%;--s:.75;--d:.75"><div class="coin-spin" style="--t:6.6s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/javascript/javascript-original.svg" alt="" width="52" height="52" loading="lazy" decoding="async"></div></div>
+                <div class="coin" style="--x:2%;--y:30%;--s:.7;--d:.55"><div class="coin-spin" style="--t:8.4s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/postgresql/postgresql-original.svg" alt="" width="52" height="52" loading="lazy" decoding="async"></div></div>
+                <div class="coin" style="--x:8%;--y:72%;--s:.6;--d:.45"><div class="coin-spin" style="--t:7.1s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/flask/flask-original.svg" alt="" width="52" height="52" loading="lazy" decoding="async"></div></div>
+                <div class="coin" style="--x:36%;--y:96%;--s:.6;--d:.5"><div class="coin-spin" style="--t:9.1s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/fastapi/fastapi-original.svg" alt="" width="52" height="52" loading="lazy" decoding="async"></div></div>
+                <div class="coin" style="--x:66%;--y:14%;--s:.6;--d:.45"><div class="coin-spin" style="--t:6.9s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/nginx/nginx-original.svg" alt="" width="52" height="52" loading="lazy" decoding="async"></div></div>
+                <div class="coin" style="--x:86%;--y:28%;--s:.75;--d:.7"><div class="coin-spin" style="--t:8.6s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/raspberrypi/raspberrypi-original.svg" alt="" width="52" height="52" loading="lazy" decoding="async"></div></div>
+                <div class="coin" style="--x:50%;--y:2%;--s:.55;--d:.4"><div class="coin-spin" style="--t:7.4s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/vitejs/vitejs-original.svg" alt="" width="52" height="52" loading="lazy" decoding="async"></div></div>
+                <div class="coin" style="--x:20%;--y:94%;--s:.6;--d:.5"><div class="coin-spin" style="--t:9.4s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/jupyter/jupyter-original.svg" alt="" width="52" height="52" loading="lazy" decoding="async"></div></div>
+                <div class="coin" style="--x:97%;--y:48%;--s:.55;--d:.4"><div class="coin-spin" style="--t:6.7s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/numpy/numpy-original.svg" alt="" width="52" height="52" loading="lazy" decoding="async"></div></div>
+                <div class="coin" style="--x:74%;--y:70%;--s:.6;--d:.5"><div class="coin-spin" style="--t:8.1s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/githubactions/githubactions-original.svg" alt="" width="52" height="52" loading="lazy" decoding="async"></div></div>
+                <div class="coin" style="--x:60%;--y:96%;--s:.55;--d:.45"><div class="coin-spin" style="--t:7.7s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/cloudflare/cloudflare-original.svg" alt="" width="52" height="52" loading="lazy" decoding="async"></div></div>
+                <div class="coin" style="--x:24%;--y:20%;--s:.55;--d:.4"><div class="coin-spin" style="--t:9.8s"><img src="https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons/prisma/prisma-original.svg" alt="" width="52" height="52" loading="lazy" decoding="async"></div></div>
                 <div class="coin" style="--x:4%;--y:92%;--s:.75;--d:.7"><div class="coin-spin" style="--t:8.3s"><span class="mask" style="--icon:url(https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/homeassistant.svg);--c:#41BDF5"></span></div></div>
                 <div class="coin" style="--x:82%;--y:96%;--s:.55;--d:.45"><div class="coin-spin" style="--t:7.3s"><span class="mask" style="--icon:url(https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/mqtt.svg);--c:#660066"></span></div></div>
                 <div class="coin" style="--x:92%;--y:4%;--s:.6;--d:.5"><div class="coin-spin" style="--t:9.3s"><span class="mask" style="--icon:url(https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons/tailscale.svg);--c:#242424"></span></div></div>
