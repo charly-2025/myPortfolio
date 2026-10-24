@@ -1521,6 +1521,12 @@ h3 {
 .contact {
     text-align: center;
     background: radial-gradient(50% 60% at 50% 100%, rgba(123, 97, 255, 0.18), transparent 70%);
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: var(--header-h);
 }
 
 .contact-inner {
