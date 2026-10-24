@@ -113,6 +113,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 .to('.cable', { strokeDashoffset: 0, duration: 0.8, stagger: 0.2, ease: 'none' })
                 .from('#lab-svg .packets', { opacity: 0, duration: 0.3 })
         },
+        offit() {
+            return gsap.timeline()
+                .from('#resto', { opacity: 0, duration: 0.5 })
+                .from('#waiter', { x: -260, duration: 1, ease: 'power2.out' }, '<0.1')
+                .from('#internat', { opacity: 0, duration: 0.6 })
+                .from('#warden', { x: 260, duration: 1, ease: 'power2.out' }, '<0.1')
+                .from('#torch-beam', { opacity: 0, duration: 0.3 })
+                .to('#night-shade', { opacity: 0.25, duration: 0.5 }, '<');
+        },
     };
 
     const build = { 'fig-school': 'education', 'fig-lab': 'homelab', 'fig-offit': 'offit' };
