@@ -1111,9 +1111,15 @@ h3 {
 
 .perso-links {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 18px;
     margin-top: auto;
+}
+
+/* Les liens d'une carte restent sur une seule ligne : aucun retour à la ligne possible au survol */
+.perso-links .repo-link,
+.repo-link {
+    white-space: nowrap;
 }
 
 .lab-card .repo-link {
@@ -1937,5 +1943,14 @@ footer {
     .hero-meta,
     .hero-card {
         animation: none;
+    }
+}
+
+/* Défilement des projets : le premier projet commence au centre de l'écran,
+   le dernier termine au centre (marge = moitié de l'écran moins une demi-carte) */
+@media (min-width: 960px) and (min-height: 640px) {
+    .h-track {
+        padding-left: calc(50vw - 210px);
+        padding-right: calc(50vw - 210px);
     }
 }
