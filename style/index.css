@@ -1840,3 +1840,10 @@ h3 {
 .coin-spin {
     will-change: transform;
 }
+
+/* Mobile : espace entre les soft skills et les langues (panneau sur une colonne) */
+@media (max-width: 560px) {
+    .skills-panel .chips-soft {
+        margin-bottom: 24px;
+    }
+}

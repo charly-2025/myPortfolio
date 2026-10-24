@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 .from('.coin', { scale: 0, z: -600, opacity: 0, duration: 1, stagger: { each: 0.05, from: 'random' }, ease: 'back.out(1.4)' })
                 .from('.skills-panel', { y: 60, opacity: 0, duration: 0.8 }, '<0.2')
                 .from('.skills-panel .skill-cat', { y: 30, opacity: 0, duration: 0.5, stagger: 0.06 }, '<0.3')
-                .from('.skills-panel .chip', { y: 20, opacity: 0, duration: 0.4, stagger: 0.03 }, '<0.3')
+                .from('.skills-panel .chip', { scale: 0.85, opacity: 0, duration: 0.4, stagger: 0.03 }, '<0.3')
                 .from('.lang-bar span', { scaleX: 0, transformOrigin: '0 50%', duration: 0.8, stagger: 0.2 }, '<0.3');
         },
         offit() {
