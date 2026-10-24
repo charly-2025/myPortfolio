@@ -4,7 +4,7 @@ My personal portfolio: a single-page website with scroll-driven
 animated scenes that tell my journey as a computer science student
 specializing in **cybersecurity** at Epitech Rennes.
 
-**Live:** [charly-2025.github.io/myPortfolio](https://charly-2025.github.io/myPortfolio/)
+**Live:** [charly.richard-fromont.fr](https://charly.richard-fromont.fr/)
 
 `HTML` · `CSS` · `JavaScript` · `GSAP` · `ScrollTrigger` · `SVG`
 
