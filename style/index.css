@@ -1954,3 +1954,59 @@ footer {
         padding-right: calc(50vw - 210px);
     }
 }
+
+/* ---------- Page mentions légales ---------- */
+.site-footer a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.site-footer a:hover {
+    color: var(--text);
+}
+
+.legal-back {
+    margin-left: auto;
+}
+
+.legal {
+    padding: calc(var(--header-h) + 56px) 0 80px;
+}
+
+.legal .container {
+    max-width: 760px;
+}
+
+.legal-date {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin: -12px 0 40px;
+}
+
+.legal section {
+    padding: 28px 0;
+    border-top: 1px solid var(--line);
+}
+
+.legal h2 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+
+.legal p,
+.legal-list li {
+    color: #c2c9d8;
+    margin-bottom: 10px;
+}
+
+.legal a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.legal-list {
+    padding-left: 18px;
+    list-style: disc;
+}
