@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://charly.richard-fromont.fr/sitemap.xml
